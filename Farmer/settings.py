@@ -52,6 +52,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+
+    # added apps
+
+    'htmlmin.middleware.HtmlMinifyMiddleware',
+    'htmlmin.middleware.MarkRequestMiddleware',
+
 ]
 
 ROOT_URLCONF = 'Farmer.urls'
@@ -148,3 +154,8 @@ PWA_SERVICE_WORKER_PATH = os.path.join(
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
+
+
+# Minification Turned on
+
+HTML_MINIFY = True
