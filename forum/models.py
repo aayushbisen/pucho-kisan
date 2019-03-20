@@ -29,7 +29,7 @@ class Farmer(models.Model):
     first_name = models.CharField(_("Farmer's firstname"), max_length=50)
     last_name = models.CharField(_("Farmer's surname"), max_length=50)
     password = models.CharField(_("Farmer's password"), max_length=100)
-    phone_number = models.CharField(_("Phone number"), max_length=20)
+    phone_number = models.CharField(_("Phone number"), max_length=20, unique=True)
     dob = models.DateField(
         _("Date of birth"), auto_now=False, auto_now_add=False)
     zip_code = models.IntegerField(_("Zip code"),
