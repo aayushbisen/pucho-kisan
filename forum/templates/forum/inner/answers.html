@@ -1,0 +1,25 @@
+<div class="card white darken-1">
+    <div class="card-content ">
+      <span class="card-title no-margin">
+        <strong class="card-name" >By <a href="{{answer.answered_by.get_absolute_url}}">{{answer.answered_by}}</a></strong>
+        <p style="font-size:13px; margin-top: -4px;"> {{answer.date_time_created}} </p>
+       
+      </span>
+      
+      <p class="aayush flow-text">
+      {{answer.answer}}
+    </p>
+     
+    </div>
+    
+    <div class="card-action">
+      <span>
+        <a href="#!" class="upvote">
+          <i class="material-icons left">thumb_up</i>
+          <span class="upvote-count"> {{answer.upvotes}} </span>
+        </a>
+      </span>
+      
+        
+    </div>
+  </div>

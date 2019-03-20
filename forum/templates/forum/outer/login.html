@@ -1,0 +1,31 @@
+{% extends 'forum/outer/base.html' %}
+{% load i18n %}
+
+{% block title %} {% trans "Login" %} {% endblock title %}
+
+{% block content %}
+
+    <div class="card-panel grey lighten-4 grey-text z-depth-0 text-darken-4">
+        <h4 class="row center heading-h4"> {% trans "Login" %} </h4>
+        <form method="POST">
+                {% csrf_token %}
+                <div class="input-field">
+                    {{form.phone_number.label_tag}}
+                    {{form.phone_number}}
+                    <span class="helper-text" data-error="{{form.phone_number.errors}}"></span>
+                </div>
+                    
+                <div class="input-field">
+                    {{form.password.label_tag}}
+                    {{form.password}}
+                    <span class="helper-text" data-error="{{form.password.errors}}"></span>
+                </div>
+
+            <div class="center-align">
+                <button type="submit" class="btn blue darken-1"> {% trans "Login" %} </button>
+            </div>
+        </form>
+
+    </div>
+
+{% endblock content %}

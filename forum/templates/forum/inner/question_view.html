@@ -1,0 +1,28 @@
+<div class="card white darken-1">
+    <div class="card-content ">
+      <span class="card-title no-margin">
+        <strong class="card-name" ><a href="{{question.asked_by.get_absolute_url}}">{{question.asked_by}}</a></strong>
+        <p style="font-size:13px; margin-top: -4px;"> {{question.date_time_created}} </p>
+      </span>
+      
+      <p class="aayush flow-text">
+      {{question}}
+    </p>
+     
+    </div>
+    
+    <div class="card-action">
+      <span>
+        <a href="#!" class="upvote">
+          <i class="material-icons left">thumb_up</i>
+          <span class="upvote-count"> {{question.upvotes}} </span>
+        </a>
+      </span>
+      
+      <span class="right" >
+        <a href="{{question.get_absolute_url}}" class="green-text"><i class="material-icons left">chat</i> <span class="left"> {{question.answers.count}} </span> </a>
+        <span class="new badge cyan" data-badge-caption="" > {{question.category_name}} </span>
+      </span>
+        
+    </div>
+  </div>

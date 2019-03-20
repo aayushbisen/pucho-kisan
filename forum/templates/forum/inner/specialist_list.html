@@ -1,0 +1,49 @@
+{% extends 'forum/inner/base.html' %} 
+
+{% load i18n %}
+
+{% block title %}  {% trans "Specialists" %}  {% endblock title %} 
+
+{% block page-title %} {% trans "Specialists" %} {% endblock page-title %} 
+
+
+{% block content %}
+
+<div class="container">
+
+<ul class="collection">
+
+  {% for specialist in specialists %}
+
+    <li class="collection-item avatar">
+      <img
+        src="https://image.flaticon.com/icons/svg/190/190683.svg"
+        alt="{{specialist}}"
+        class="circle"
+      />
+      <span class="title"> {{specialist}} </span>
+    
+    <p>
+      {{specialist.phone_number}} 
+      <br/>
+      <span class="new badge blue" data-badge-caption="{{specialist.subject}}"></span>
+    </p>
+    
+    <a href="tel:{{specialist.phone_number}}" class="secondary-content">
+      <i class="material-icons blue-text">phone</i>
+    </a>
+
+  </li>
+
+  {% empty %}
+    <div class="flow-text">No specialists</div>
+  {% endfor %}
+
+  
+
+</ul>
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,44 @@
+<div class="card white darken-1">
+    
+    <div class="card-content question-content">
+      
+      <div class="card-title no-margin">
+      
+        <strong class="card-name">
+          
+          <a class="grey-text text-darken-4" href="{{answer.answered_by.get_absolute_url}}">
+
+            {{answer.answered_by}}
+
+          </a>
+        
+        </strong>
+      
+        <div class="card-time"> 
+          {{answer.date_time_created}} 
+        </div>
+      
+      </div>
+      
+      <p class="{% if answer.answer|length < 40 %} flow-text {% endif %} ">
+        {{answer}}
+      </p>
+     
+    </div>
+    
+    <div class="card-action">
+      
+      <span>
+      
+        <a href="#!" class="upvote upvote-answer {% if is_upvoted %} upvoted {% endif %} " data-answer="{{answer.id}}" >
+      
+          <i class="material-icons left">thumb_up</i>
+      
+          <span class="upvote-count"> {{answer.upvotes}} </span>
+      
+        </a>
+      
+      </span>
+      
+    </div>
+  </div>

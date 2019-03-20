@@ -1,0 +1,56 @@
+{% extends 'forum/inner/base.html' %}
+
+{% load i18n %}
+
+{% block title %}  {% trans "Ask a question" %} {% endblock title %}
+
+{% block page-title %} {% trans "Ask a question" %} {% endblock page-title %}    
+    
+
+{% block content %}
+
+    <div class="row"></div>
+      <div class="container">
+        <div class="row">
+            
+          <form class="col s12" method="POST" enctype="multipart/form-data" >
+        
+            {% csrf_token %}
+        
+              <div class="input-field">
+                  {{form.question.label_tag}}
+                  {{form.question}}
+                  <span class="helper-text" data-error="{{form.question.errors}}"></span>
+              </div>
+
+              <div>
+                {{form.category.label_tag}}
+                {{form.category}}
+              </div>
+
+              <div class="file-field input-field">
+                    <div class="btn-small blue">
+                        <span>
+                            {% trans "Add files" %}
+                        </span>
+                        {{form.file_field}}
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate {% if form.file_field.errors %} invalid {% endif %}" 
+                            type="text" />
+                        <span class="helper-text" data-error="{{form.file_field.errors}}"></span>
+                    </div>
+                </div>
+
+              <div class="row"></div>
+              <div class="right-align">
+                <button type="submit" class="btn blue darken-1"> {% trans "Ask a question" %} </button>
+              </div>
+
+            </form>
+
+          </div>
+        
+        </div>
+
+{% endblock content %}

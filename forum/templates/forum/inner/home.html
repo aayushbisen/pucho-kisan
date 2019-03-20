@@ -1,0 +1,21 @@
+{% extends 'forum/inner/base.html' %}
+
+{% load i18n %}
+
+{% block title %}  {% trans "Home" %}  {% endblock title %}
+
+{% block page-title %} {% trans "Home" %} {% endblock page-title %}
+
+{% block content %}
+
+    <div class="container">
+    
+            {% for question in questions %}
+                {{ question|question_markup:farmer|safe }}
+            {% empty %}
+                <div class="row flow-text grey-text"> {% trans "No questions" %} </div>
+            {% endfor %}
+
+    </div>
+
+{% endblock content %}

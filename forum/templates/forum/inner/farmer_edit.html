@@ -1,0 +1,58 @@
+{% extends 'forum/inner/base.html' %}
+{% load i18n %}
+
+
+{% block title %} {% trans "Edit your details" %} {{farmer}} {% endblock title %}
+
+{% block page-title %} {% trans "Edit your details" %} {% endblock page-title %}
+
+
+{% block content %}
+
+
+    <div class="row"></div>
+    <div class="container">
+    
+     <form method="POST" >
+
+            {% csrf_token %}
+
+            <div class="input-field">
+                {{form.phone_number.label_tag}}
+                {{form.phone_number}}
+                <span class="helper-text" data-error="{{form.phone_number.errors}}"></span>
+            </div>
+
+            <div class="input-field">
+                {{form.first_name.label_tag}}
+                {{form.first_name}}
+                <span class="helper-text" data-error="{{form.first_name.errors}}"></span>
+            </div>
+
+            <div class="input-field">
+                {{form.last_name.label_tag}}
+                {{form.last_name}}
+                <span class="helper-text" data-error="{{form.last_name.errors}}"></span>
+            </div>
+
+            <div class="input-field">
+                {{form.dob.label_tag}}
+                {{form.dob}}
+                <span class="helper-text" data-error="{{form.dob.errors}}"></span>
+            </div>
+
+            <div class="input-field">
+                {{form.zip_code.label_tag}}
+                {{form.zip_code}}
+                <span class="helper-text" data-error="{{form.zip_code.errors}}"></span>
+            </div>
+
+            <div class="center-align">
+                <button type="submit" class="btn blue darken-1"> {% trans "Save" %} </button>
+            </div>
+
+        </form>
+
+    </div>
+
+{% endblock content %}

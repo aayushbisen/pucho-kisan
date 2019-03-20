@@ -1,0 +1,54 @@
+{% extends "forum/inner/base.html" %}
+{% load i18n %}
+
+{% block page-title %} {{profile}}{% endblock page-title %}
+  
+      
+{% block main %}
+
+  <div class="row">
+  <div class="col s12 l4">
+  <div class="container">
+    <div class="section">
+
+      <h5 class="row header-font grey-text text-darken-3"> {% trans "About" %} </h5 >
+
+      <p>
+          <ul class="collapsible">
+          <li class="active" >
+            <div class="collapsible-header"><i class="material-icons blue-text text-darken-3 ">call</i> {% trans "Phone number" %} </div>
+            <div class="collapsible-body"><span class="flow-text" >{{profile.phone_number}}</span></div>
+          </li>
+
+          <li>
+            <div class="collapsible-header"><i class="material-icons blue-text text-darken-3 ">location_on</i> {% trans "Zip code" %} </div>
+            <div class="collapsible-body"><span class="flow-text" >{{profile.zip_code}}</span></div>
+          </li>
+        </ul>
+      </p>
+    
+    </div>
+  </div>
+
+    </div>
+
+    <div class="row col s12 l8">
+        <div class="container">
+
+          <div class="row"></div>
+          <div class="row"></div>
+
+          <h5 class="row header-font grey-text text-darken-3"> {% trans "Questions asked" %} </h5 >
+          {% for question in questions %}
+            {{ question|question_markup:farmer }}
+          {% empty %}
+            <div class="row flow-text grey-text"> {% trans "No questions" %} </div>
+          {% endfor %}
+
+        </div>
+    
+    </div>
+  </div>  
+
+{% endblock main %}
+

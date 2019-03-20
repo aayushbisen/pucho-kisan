@@ -1,0 +1,59 @@
+{% extends 'forum/inner/base.html' %}
+
+{% load i18n %}
+
+{% block title %} {{question}} {% endblock title %}
+
+{% block page-title %}
+{% trans "Give Answers to questions" %}
+{% endblock page-title %}
+
+{% block content %}
+
+<div class="container">
+
+
+    {{ question|question_markup:farmer|safe }}
+
+
+    <div class="row"></div>
+
+    <div class="container">
+
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-field">
+                {{form.answer.label_tag}}
+                {{form.answer}}
+                <span class="helper-text" data-error="{{form.answer.errors}}"></span>
+            </div>
+
+            <div class="row right-align">
+
+                <button type="submit" class="btn blue darken-1"> {% trans "answer" %} </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <div class="section">
+        <h5> {% trans "Answers" %} </h5>
+
+        <p>
+
+            {% for answer in question.most_upvoted_answers%}
+            {{answer|answer_markup:farmer|safe}}
+            {% empty %}
+            <div class="grey-text"> {% trans "No answers" %} </div>
+            {% endfor %}
+        </p>
+
+
+    </div>
+
+</div>
+
+
+{% endblock content %}

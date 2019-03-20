@@ -1,0 +1,88 @@
+<div class="card white darken-1">
+    
+    <div class="card-content question-content"> 
+      
+      <span class="card-title no-margin">
+      
+        <strong class="card-name">
+          
+          <a class="grey-text text-darken-4" href="{{question.asked_by.get_absolute_url}}">
+
+            {{question.asked_by}}
+
+          </a>
+        
+        </strong>
+      
+        <div class="card-time"> 
+          {{question.date_time_created}} 
+        </div>
+      
+      </span>
+      
+      <p class="{% if question.question|length < 40 and not question.files.all %} flow-text {% endif %} ">
+        {{question}}
+      </p>
+
+
+     
+    </div>
+
+    {% if question.files.all %}
+      
+        <div class="carousel carousel-slider">
+
+          {% for file in question.files.all %}
+
+            <a class="carousel-item black" href="#question-file-{{forloop.counter}}">
+
+              {% if file.is_image %}
+                  <img class="fit-image" alt="{{quesiton.asked_by}}'s question image {{forloop.counter}}" src="{{file.url}}" />
+              {% elif file.is_video%}
+                  <video controls="nodownload" class="fit-video" alt="{{quesiton.asked_by}}'s question image {{forloop.counter}}" src="{{file.url}}" >
+                    Your browser doesn't support videos
+                  </video>
+
+              {% endif %}
+
+            </a>
+          {% endfor %}
+
+        </div>
+
+        <div class="hide-on-med-and-down">
+          <div class="row"></div>
+        </div>
+
+      {% endif %}
+
+    <div class="card-action">
+      
+      <span>
+      
+        <span class="upvote-question pointer upvote {% if is_upvoted %} upvoted {% endif %} " data-question="{{question.id}}" >
+      
+          <i class="material-icons left">thumb_up</i>
+          <span class="upvote-count"> {{question.upvotes}} </span>
+      
+        </span>
+      
+      </span>
+      
+      <span class="right">
+        
+        <a href="{{question.get_absolute_url}}" class="green-text">
+        
+          <i class="material-icons left">chat</i>
+          <span class="left"> {{question.answers.count}} </span> 
+        
+        </a>
+        
+        <span class="new badge blue darken-3" data-badge-caption=""> 
+          {{question.category_name}} 
+        </span>
+    
+      </span>
+        
+    </div>
+  </div>
