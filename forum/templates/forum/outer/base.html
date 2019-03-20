@@ -2,34 +2,37 @@
 {% load i18n %}
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#1e88e5" />
-    <link rel="icon" href="{% static 'forum/images/icons/icon-144x144.png' %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1e88e5" />
+  <meta name="Description" content="{% trans "Solutions for farmers by farmers !" %}">
+  <link rel="icon" href="{% static 'forum/images/icons/icon-144x144.png' %}">
 
-    <title>
-      {% block title %}{% endblock title %} - {% trans "Kisan" %}
-    </title>
+  <title>
+    {% block title %}{% endblock title %} - {% trans "Kisan" %}
+  </title>
 
 
-    {% block resource %}
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-      <link rel="stylesheet" href="{% static 'forum/main.css' %}">
+  {% block resource %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="{% static 'forum/main.css' %}">
 
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-    {% endblock resource %}
+  {% endblock resource %}
 
-   
+
 </head>
+
 <body>
-    <!--Navbar-->
+  <!--Navbar-->
   <div class="navbar-fixed">
-    <nav class="blue darken-1" >
+    <nav class="blue darken-1">
       <div class="container">
         <div class="nav-wrapper">
           <a href="#!" class="brand-logo logo-custom">
@@ -37,110 +40,117 @@
           </a>
 
           <a href="#" data-target="farmer-options" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-          
+
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
             <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-            <li><a  href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+            <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
           </ul>
-        
+
         </div>
       </div>
     </nav>
   </div>
-    
-      <ul class="sidenav" id="farmer-options">
-        <li><a href="{% url 'forum:signup' %}">  {% trans "Signup" %} </a></li>
-        <li><a  href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-        <li><a  href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+
+  <ul class="sidenav" id="farmer-options">
+    <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
+    <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
+    <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+  </ul>
+
+  <!-- Section:Slider -->
+
+  <section class="slider">
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img src="{% static 'forum/images/1.jpeg' %}" alt="">
+          <div class="caption left-align">
+            <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
+        </li>
+        <li>
+          <img src="{% static 'forum/images/2.jpg' %}" alt="">
+          <div class="caption center-align">
+            <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
+        </li>
+        <li>
+          <img src="{% static 'forum/images/3.jpg' %}" alt="">
+          <div class="caption right-align">
+            <h2 class="light white-text"> {% trans "Solutions for farmers by farmers !" %} </h2>
+        </li>
       </ul>
+    </div>
+  </section>
 
-      <!-- Section:Slider -->
+  <!-- Section-signup -->
 
-      <section class="slider">
-        <div class="slider">
-          <ul class="slides">
-            <li>
-              <img src="{% static 'forum/images/1.jpeg' %}" alt="">
-              <div class="caption left-align">
-                  <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-            </li>
-            <li>
-                <img src="{% static 'forum/images/2.jpg' %}" alt="">
-                <div class="caption center-align">
-                  <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-              </li>
-              <li>
-                  <img src="{% static 'forum/images/3.jpg' %}" alt="">
-                  <div class="caption right-align">
-                  <h2 class="light white-text"> {% trans "Solutions for farmers by farmers !" %} </h2>
-                </li>
+  <section class="section section-signup">
+    <div class="container">
+
+      <div class="row">
+        <div class="col s12 m6">
+          <h4> {% trans "Get a free account" %} </h4>
+          <p style="text-align:justify" class="flow-text grey-text text-darken-3">
+
+            KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
+            नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
+            भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
+            हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
+            ने इनपुट की हैं।
+
+
+          </p>
+          </p>
+        </div>
+        <div class="col s12 m6">
+          {% block content %}{% endblock content %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  {% comment %} Footer {% endcomment %}
+  <footer class="page-footer blue darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text"> {% trans "Kisan" %} </h5>
+          <p class="grey-text text-lighten-4">
+            KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
+            नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
+            भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
+            हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
+            ने इनपुट की हैं।
+
+          </p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text"> {% trans "Learn more" %} </h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
+            <li><a class="grey-text text-lighten-3" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
           </ul>
         </div>
-      </section>
-      
-        <!-- Section-signup -->
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2019 {% trans "Kisan" %}
+        <a class="grey-text text-lighten-4 right" href="#!"> {% trans "More links" %} </a>
+      </div>
+    </div>
+  </footer>
 
-        <section class="section section-signup">
-            <div class="container">
-
-                <div class="row">
-                    <div class="col s12 m6">
-                       <h4> {% trans "Get a free account" %} </h4>
-                       <p style="text-align:justify" class="flow-text grey-text text-darken-3"> 
-
-                      KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है। भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों ने इनपुट की हैं।
-
-                     
-                        </p>
-                       </p> 
-                    </div>
-                    <div class="col s12 m6">
-                        {% block content %}{% endblock content %}
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-{% comment %} Footer {% endcomment %}
-<footer class="page-footer blue darken-1">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text"> {% trans "Kisan" %} </h5>
-                <p class="grey-text text-lighten-4">
-                KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है। भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों ने इनपुट की हैं।
-
-                </p> 
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text"> {% trans "Learn more" %} </h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-                  <li><a class="grey-text text-lighten-3" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2019 {% trans "Kisan" %}
-            <a class="grey-text text-lighten-4 right" href="#!"> {% trans "More links" %} </a>
-            </div>
-          </div>
-        </footer>
-      
 </body>
 
 {% block JS %}
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" type="text/javascript" ></script>
-  <script src="{% static 'forum/js/main.js' %}" type="text/javascript" ></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+  type="text/javascript"></script>
+<script src="{% static 'forum/js/main.js' %}" type="text/javascript"></script>
 
 {% endblock JS %}
 
