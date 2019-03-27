@@ -1,4 +1,7 @@
 import os
+import uuid
+import requests
+from urllib.parse import urlencode
 
 from django.db import models
 from django.utils.translation import gettext as _
@@ -36,12 +39,65 @@ class Farmer(models.Model):
                                    validators=[validate_zip_code])
 
     date_time_created = models.DateTimeField(auto_now_add=True)
+    account_token = models.CharField(max_length=20, default=str(uuid.uuid4())[:20], blank=True)
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
         return reverse("forum:farmer_detail", kwargs={"pk": self.pk})
+
+    @staticmethod
+    def generate_account_token():
+        return str(uuid.uuid4()[:20])
+
+    def refresh_account_token(self):
+        self.account_token = self.generate_account_token()
+        self.save()
+
+    def send_verification_link(self):
+
+        TEMPLATE_ID = 8203
+        API_KEY = "47ftJlFUczY3eVTSbupGm1yjMxH6QDgAWhXs5EKvOadoqkwLRBfDU8plrv70ncJFqKTIwXNb3QZYCt92"
+
+        url = "https://www.fast2sms.com/dev/bulk"
+
+        payload = {
+            'sender_id': 'FSTSMS',
+            'language': 'english',
+            'route': 'qt',
+            'numbers': f"{self.phone_number}",
+            'message': TEMPLATE_ID,
+            'variables': '{#BB#}|{#DD#}',
+            'variables_values': f'{self.phone_number}|{self.account_token}'
+        }
+
+        payload = urlencode(payload)
+
+        headers = {
+            'authorization': API_KEY,
+            'cache-control': "no-cache",
+            'content-type': "application/x-www-form-urlencoded"
+        }
+
+        response = requests.request(
+          "POST", url, data=payload, headers=headers)
+
+        print(response.text)
+
+    def activate_account(self, recieved_account_token):
+
+        if self.is_active:
+            return 400
+
+        if self.account_token == recieved_account_token:
+            self.is_active = True
+            self.save()
+            return 200
+
+        # if account token is wrong
+        return 300
 
     @property
     def region_and_sub_region_code(self):

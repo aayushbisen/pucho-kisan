@@ -6,7 +6,23 @@
 
 {% block content %}
 
-    <div class="card-panel grey lighten-4 grey-text z-depth-0 text-darken-4">
+    {% if is_message_send %}
+
+        <div style="height:80vh;" class="valign-wrapper hide-on-med-and-down flow-text">
+            <div class="card-panel blue white-text">
+             {% trans "An verification link is send to your registered mobile number. Click the link to activate your account" %}
+            </div>
+        </div>
+
+        <div class="card-panel blue white-text hide-on-large-only flow-text">
+             {% trans "An verification link is send to your registered mobile number. Click the link to activate your account" %}
+        </div>
+
+
+
+    {% else %}
+
+        <div class="card-panel grey lighten-4 grey-text z-depth-0 text-darken-4">
         <h4 class="row center-align"> {% trans "Signup" %} </h4>
         <form method="POST" >
 
@@ -54,5 +70,9 @@
 
         </form>
     </div>
+
+    {% endif %}
+
+    
 
 {% endblock content %}

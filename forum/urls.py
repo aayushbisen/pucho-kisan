@@ -23,7 +23,7 @@ urlpatterns = [
 
     # /farmer/<int:pk>
     path('farmer/<int:pk>', views.FarmerDetailView.as_view(), name='farmer_detail'),
-    
+
     # /question/<int:pk>
     path('question/<int:pk>', views.question_detail_view, name='question_detail'),
 
@@ -41,7 +41,7 @@ urlpatterns = [
 
     # search?q=<search_term>
     path("search", views.search, name="search"),
-    
+
     # AJAX URLS
 
     # upvote-question/
@@ -50,6 +50,9 @@ urlpatterns = [
 
     # upvote-answer/
     path("upvote-answer/", views.upvote_answer, name="upvote_answer"),
-    
 
-    ]
+    path("verify-farmer/<int:phone_number>/<str:account_token>/",
+         views.verify_farmer, name="verify_farmer"),
+
+    path("team-page/", views.team_page, name="team_page"),
+]

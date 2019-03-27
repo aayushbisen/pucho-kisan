@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html>
 
@@ -18,11 +19,12 @@
 
 
   {% block resource %}
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="{% static 'forum/css/main.css' %}">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static 'forum/css/main.css' %}">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
   {% endblock resource %}
 
@@ -30,6 +32,15 @@
 </head>
 
 <body>
+
+  <!-- Dropdown Structure
+  <ul id="dropdown1" class="dropdown-content">
+      <li><a href="{% url 'forum:index_eng'%}">English</a></li>
+      <li class="divider"></li>
+      <li><a href="{% url 'forum:index_hi' %}">हिंदी</a></li>
+  </ul> -->
+
+
   <!--Navbar-->
   <div class="navbar-fixed">
     <nav class="blue darken-1">
@@ -41,10 +52,17 @@
 
           <a href="#" data-target="farmer-options" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
+          
+
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
             <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
             <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+            <li>
+              <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
+              <!-- Dropdown Trigger -->
+      <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{% trans "Language" %}<i class="material-icons right">arrow_drop_down</i></a></li> -->
+            </li>
           </ul>
 
         </div>
@@ -56,6 +74,9 @@
     <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
     <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
     <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+    <li>
+        <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
+    </li>
   </ul>
 
   <!-- Section:Slider -->
@@ -87,25 +108,32 @@
   <section class="section section-signup">
     <div class="container">
 
+    {% block main %}
+
       <div class="row">
+        
+        <div class="col s12 m6">
+          {% block content %}{% endblock content %}
+        </div>
+
         <div class="col s12 m6">
           <h4> {% trans "Get a free account" %} </h4>
           <p style="text-align:justify" class="flow-text grey-text text-darken-3">
 
-            KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
+            किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
             नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
             भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
             हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
             ने इनपुट की हैं।
 
+          </p>
+          </p>
+        </div>
 
-          </p>
-          </p>
-        </div>
-        <div class="col s12 m6">
-          {% block content %}{% endblock content %}
-        </div>
       </div>
+
+    {% endblock main %}
+    
     </div>
   </section>
 
@@ -117,7 +145,7 @@
         <div class="col l6 s12">
           <h5 class="white-text"> {% trans "Kisan" %} </h5>
           <p class="grey-text text-lighten-4">
-            KISAN FORUM, किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
+            किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
             नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
             भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
             हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
