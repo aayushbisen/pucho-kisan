@@ -1,0 +1,54 @@
+{% extends 'forum/outer/base.html' %}
+{% load i18n %}
+
+{% block title %} {% trans "Login" %} {% endblock title %}
+
+{% block resource %}
+
+    {{ block.super }}
+
+   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+{% endblock resource %}
+
+{% block main %}
+
+<div class="row">
+
+    {% for member_data in team_data %}
+
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <img src="{{member_data.avatar_link}}">
+       
+        </div>
+        <div class="card-content">
+          <div class="row">
+              <span class="card-title left" style="font-weight:500" > {{member_data.name}} </span>
+              <span class="new badge blue" data-badge-caption=""> {{member_data.badge}} </span>
+          </div>
+
+          <p> {{member_data.description}} </p>
+        </div>
+        <div class="card-action">
+          
+         <a href="{{member_data.github_link}}" class='blue-text btn-flat' >
+             <i class="fab fa-github <lef></lef>t"></i> &nbsp; GITHUB
+          </a>     
+          <a href="{{member_data.linked_in_link}}" class='blue-text btn-flat' >
+             <i class="fab fa-linkedin-in left"></i>LINKED IN
+          </a>
+       
+     
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock main %}
