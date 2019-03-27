@@ -17,7 +17,7 @@ from django.views import generic
 
 
 def loggined_farmer_id(request):
-    """ Gives the id of the currently logged in farmer 
+    """ Gives the id of the currently logged in farmer
         returns `None` if no farmer is logged in
     """
 
@@ -55,7 +55,6 @@ def login_required(function):
 
 
 def basic_inner_context(request):
-
     """Basic context for inner views """
 
     farmer = loggined_farmer(request)
@@ -88,9 +87,10 @@ def login(request, verify_message=""):
                 farmer = Farmer.objects.get(phone_number=phone_number)
 
                 if check_password(password, farmer.password):
-                    
+
                     if not farmer.is_active:
-                        login_form.add_error('phone_number', _("Account is not activated"))
+                        login_form.add_error('phone_number', _(
+                            "Account is not activated"))
 
                     else:
                         request.session['farmer_id'] = farmer.id
@@ -100,7 +100,8 @@ def login(request, verify_message=""):
                     login_form.add_error('password', _("Invalid password"))
 
             except Farmer.DoesNotExist:
-                login_form.add_error('phone_number', _("No Farmer found with this phone number"))
+                login_form.add_error('phone_number', _(
+                    "No Farmer found with this phone number"))
 
     return render(request, "forum/outer/login.html", {
         'form': login_form,
@@ -192,25 +193,26 @@ def home(request):
 
 
 def create_question(request):
-    
+
     FILE_LIMIT = 10
     error_occured = False
 
     create_form = custom_forms.CreateQuestionForm()
 
     if request.method == "POST":
-        
+
         create_form = custom_forms.CreateQuestionForm(request.POST)
         files = request.FILES.getlist('file_field')
 
         if create_form.is_valid():
-            
+
             question = create_form.save(commit=False)
             question.asked_by = loggined_farmer(request)
             question.save()
 
             if len(files) > FILE_LIMIT:
-                create_form.add_error('file_field', _("Upto 10 files can be attached with a question"))
+                create_form.add_error('file_field', _(
+                    "Upto 10 files can be attached with a question"))
                 error_occured = True
 
             for f in files:
@@ -234,15 +236,15 @@ def create_question(request):
 
             if error_occured:
                 question.delete()
-            
+
             else:
                 return HttpResponseRedirect(question.get_absolute_url())
-
 
     return render(request, "forum/inner/question_create.html", {
         **basic_inner_context(request),
         'form': create_form
     })
+
 
 class QuestionUpdateView(generic.UpdateView):
     model = Question
@@ -252,6 +254,7 @@ class QuestionUpdateView(generic.UpdateView):
 class QuestionDeleteView(generic.DeleteView):
     model = Question
     template_name = "question_delete.html"
+
 
 class FarmerDetailView(generic.DetailView):
     model = Farmer
@@ -271,7 +274,7 @@ class FarmerDetailView(generic.DetailView):
         farmer = self.get_object()
 
         all_questions = Question.objects.filter(
-                asked_by__id=farmer.id
+            asked_by__id=farmer.id
         ).order_by("-date_time_created")
 
         questions = {
@@ -283,7 +286,7 @@ class FarmerDetailView(generic.DetailView):
         }[category]
 
         category_name = Question.full_category_name(category, _("All"))
-        
+
         context = {
             **basic_inner_context(self.request),
             'questions': questions,
@@ -294,6 +297,7 @@ class FarmerDetailView(generic.DetailView):
         }
 
         return context
+
 
 class FarmerUpdateView(generic.UpdateView):
 
@@ -325,13 +329,11 @@ def question_detail_view(request, pk):
         answer_form = custom_forms.CreateAnswerForm(request.POST)
 
         if answer_form.is_valid():
-            
+
             answer = answer_form.save(commit=False)
             answer.answer_of = question
             answer.answered_by = loggined_farmer(request)
             answer.save()
-
-
 
     return render(request, "forum/inner/question_detail.html", {
         **basic_inner_context(request),
@@ -348,7 +350,7 @@ def search(request):
     # Empty question sets
     questions = Question.objects.none()
 
-    # Appending the results 
+    # Appending the results
     if search_term:
         # spliting the whole sentence into words
         search_words = search_term.split()
@@ -371,6 +373,7 @@ def search(request):
         'questions': questions
     })
 
+
 def specialists(request):
 
     specialist = Specialist.objects.all()
@@ -386,7 +389,7 @@ def logout(request):
     try:
         del request.session['farmer_id']
         return redirect("forum:login")
-    
+
     except KeyError:
         return HttpResponse("")
 
@@ -395,29 +398,29 @@ def logout(request):
 
 @login_required
 def upvote_question(request):
-    
+
     if request.method == "POST":
-        
+
         question_id = request.POST.get("question_id")
         question = get_object_or_404(Question, pk=question_id)
-        
+
         farmer = loggined_farmer(request)
 
         question.toggle_upvote_by(farmer)
 
         return HttpResponse(question.upvotes, content_type="text/plain")
-    
+
     raise Http404
 
 
 @login_required
 def upvote_answer(request):
-    
+
     if request.method == "POST":
-        
+
         answer_id = request.POST.get("answer_id")
         answer = get_object_or_404(Answer, pk=answer_id)
-        
+
         farmer = loggined_farmer(request)
 
         answer.toggle_upvote_by(farmer)
@@ -447,10 +450,10 @@ def team_page(request):
     team_data = [
         {
             'name': "Suvansh Rana",
-            'badge': "",
-            'avatar_link': "",
+            'badge': "full stack dev",
+            'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
             'github_link': "https://github.com/sherlock2000",
-            'linked_in_link': "",
+            'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
             'description': "",
         },
         {
@@ -460,21 +463,34 @@ def team_page(request):
             'github_link': "https://github.com/aayushbisen",
             'linked_in_link': "",
             'description': "",
-        },{
+        },
+        {
             'name': "Prateek Chatterjee",
             'badge': "",
             'avatar_link': "",
             'github_link': "https://github.com/Prateek0803",
             'linked_in_link': "",
             'description': "",
-        },{
+        },
+        {
+            'name': "Harsh Singh",
+            'badge': "front end dev",
+            'avatar_link': "https://avatars1.githubusercontent.com/u/29140145",
+            'github_link': "https://github.com/harshsngh07",
+            'linked_in_link': "https://www.linkedin.com/in/harsh-singh-4b950b46/",
+            'description': "Harsh is a Computer Science Undergrad. \
+            He is a passionate learner and wants to work in the field of \
+                 Artificial Intelligence.",
+        },
+        {
             'name': "Harsh Singh",
             'badge': "",
             'avatar_link': "",
             'github_link': "https://github.com/harshsngh07",
             'linked_in_link': "",
             'description': "",
-        },{
+        },
+        {
             'name': "Piyush Kumar Singh",
             'badge': "",
             'avatar_link': "",
