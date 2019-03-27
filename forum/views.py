@@ -458,11 +458,12 @@ def team_page(request):
         },
         {
             'name': "Aayush Bisen",
-            'badge': "",
+            'badge': "front end dev",
             'avatar_link': "https://avatars3.githubusercontent.com/u/41341387",
             'github_link': "https://github.com/aayushbisen",
-            'linked_in_link': "",
-            'description': "",
+            'linked_in_link': "https://www.linkedin.com/in/aayush-bisen-b79268157/",
+            'description': "Aayush is a Computer Science Undergrad. \
+                He is an open-source enthusiast and football lover.  ",
         },
         {
             'name': "Prateek Chatterjee",
@@ -481,14 +482,6 @@ def team_page(request):
             'description': "Harsh is a Computer Science Undergrad. \
             He is a passionate learner and wants to work in the field of \
                  Artificial Intelligence.",
-        },
-        {
-            'name': "Harsh Singh",
-            'badge': "",
-            'avatar_link': "",
-            'github_link': "https://github.com/harshsngh07",
-            'linked_in_link': "",
-            'description': "",
         },
         {
             'name': "Piyush Kumar Singh",
