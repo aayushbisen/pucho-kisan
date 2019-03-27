@@ -71,7 +71,7 @@ def basic_inner_context(request):
 # Views start here
 
 
-def login(request):
+def login(request, verify_message=""):
 
     login_form = custom_forms.LoginForm()
 
@@ -103,7 +103,8 @@ def login(request):
                 login_form.add_error('phone_number', _("No Farmer found with this phone number"))
 
     return render(request, "forum/outer/login.html", {
-        'form': login_form
+        'form': login_form,
+        'verify_message': verify_message
     })
 
 
@@ -434,7 +435,9 @@ def verify_farmer(request, phone_number, account_token):
     status = farmer.activate_account(account_token)
     
     message = {
-        200: "Account activated",
-        300: "Link is broken",
-        400: "Account already activate"
-    }
+        200: _("Account activated"),
+        300: _("Link is broken"),
+        400: _("Account already activate")
+    }[status]
+
+    return login(request, verify_message=message)

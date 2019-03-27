@@ -53,5 +53,4 @@ urlpatterns = [
 
     path("verify-farmer/<int:phone_number>/<str:account_token>/", views.verify_farmer, name="verify_farmer"),
 
-
     ]

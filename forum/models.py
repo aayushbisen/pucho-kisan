@@ -1,5 +1,7 @@
 import os
 import uuid
+import requests
+from urllib.parse import urlencode
 
 from django.db import models
 from django.utils.translation import gettext as _
@@ -55,19 +57,45 @@ class Farmer(models.Model):
         self.save()
 
     def send_verification_link(self):
-        print("**** Sending SMS ... *****")
-        pass
+
+        SENDER_ID = 35654
+        TEMPLATE_ID = 2442
+        API_KEY = 3423820348
+
+        url = "https://www.fast2sms.com/dev/bulk"
+
+        payload = {
+            'sender_id': 'FSTSMS',
+            'language': 'english',
+            'route': 'qt',
+            'numbers': f"{self.phone_number}",
+            'message': TEMPLATE_ID,
+            'variables': '{#BB#}|{#DD#}',
+            'variables_values': f'{self.phone_number}|{self.account_token}'
+        }
+
+        payload = urlencode(payload)
+
+        headers = {
+            'authorization': API_KEY,
+            'cache-control': "no-cache",
+            'content-type': "application/x-www-form-urlencoded"
+        }
+
+        response = requests.request(
+          "POST", url, data=payload, headers=headers)
+
+        print(response.text)
 
     def activate_account(self, recieved_account_token):
-        
-        if self.account_token == recieved_account_token:
-            if self.is_active:
-                return 400
 
-            else:
-                self.is_active = True
-                self.save()
-                return 200
+        if self.is_active:
+            return 400
+
+        if self.account_token == recieved_account_token:
+            self.is_active = True
+            self.save()
+            return 200
 
         # if account token is wrong
         return 300
