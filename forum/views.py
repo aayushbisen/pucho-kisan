@@ -423,7 +423,7 @@ def upvote_answer(request):
         answer.toggle_upvote_by(farmer)
 
         return HttpResponse(answer.upvotes, content_type="text/plain")
-    
+
     raise Http404
 
 
@@ -440,3 +440,50 @@ def verify_farmer(request, phone_number, account_token):
     }[status]
 
     return login(request, verify_message=message)
+
+
+def team_page(request):
+
+    team_data = [
+        {
+            'name': "Suvansh Rana",
+            'badge': "",
+            'avatar_link': "",
+            'github_link': "https://github.com/sherlock2000",
+            'linked_in_link': "",
+            'description': "",
+        },
+        {
+            'name': "Aayush Bisen",
+            'badge': "",
+            'avatar_link': "https://avatars3.githubusercontent.com/u/41341387",
+            'github_link': "https://github.com/aayushbisen",
+            'linked_in_link': "",
+            'description': "",
+        },{
+            'name': "Prateek Chatterjee",
+            'badge': "",
+            'avatar_link': "",
+            'github_link': "https://github.com/Prateek0803",
+            'linked_in_link': "",
+            'description': "",
+        },{
+            'name': "Harsh Singh",
+            'badge': "",
+            'avatar_link': "",
+            'github_link': "https://github.com/harshsngh07",
+            'linked_in_link': "",
+            'description': "",
+        },{
+            'name': "Piyush Kumar Singh",
+            'badge': "",
+            'avatar_link': "",
+            'github_link': "https://github.com/piyushkumarsingh",
+            'linked_in_link': "",
+            'description': "",
+        },
+    ]
+
+    return render(request, "forum/outer/team_page.html", {
+        'team_data': team_data
+    })

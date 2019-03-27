@@ -54,4 +54,5 @@ urlpatterns = [
     path("verify-farmer/<int:phone_number>/<str:account_token>/",
          views.verify_farmer, name="verify_farmer"),
 
+    path("team-page/", views.team_page, name="team_page"),
 ]
