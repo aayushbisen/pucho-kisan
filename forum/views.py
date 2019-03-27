@@ -131,7 +131,6 @@ def signup(request):
             new_farmer.send_verification_link()
             is_message_send = True
 
-
     return render(request, "forum/outer/signup.html", {
         'form': signup_form,
         'is_message_send': is_message_send
@@ -433,7 +432,7 @@ def verify_farmer(request, phone_number, account_token):
     farmer = get_object_or_404(Farmer, phone_number=phone_number)
 
     status = farmer.activate_account(account_token)
-    
+
     message = {
         200: _("Account activated"),
         300: _("Link is broken"),
