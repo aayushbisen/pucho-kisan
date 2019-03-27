@@ -483,6 +483,14 @@ def team_page(request):
                  Artificial Intelligence.",
         },
         {
+            'name': "Harsh Singh",
+            'badge': "",
+            'avatar_link': "",
+            'github_link': "https://github.com/harshsngh07",
+            'linked_in_link': "",
+            'description': "",
+        },
+        {
             'name': "Piyush Kumar Singh",
             'badge': "",
             'avatar_link': "",
