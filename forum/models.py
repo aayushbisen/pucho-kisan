@@ -51,16 +51,15 @@ class Farmer(models.Model):
     @staticmethod
     def generate_account_token():
         return str(uuid.uuid4()[:20])
-    
+
     def refresh_account_token(self):
         self.account_token = self.generate_account_token()
         self.save()
 
     def send_verification_link(self):
 
-        SENDER_ID = 35654
-        TEMPLATE_ID = 2442
-        API_KEY = 3423820348
+        TEMPLATE_ID = 8203
+        API_KEY = "47ftJlFUczY3eVTSbupGm1yjMxH6QDgAWhXs5EKvOadoqkwLRBfDU8plrv70ncJFqKTIwXNb3QZYCt92"
 
         url = "https://www.fast2sms.com/dev/bulk"
 
