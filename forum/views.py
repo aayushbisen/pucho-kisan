@@ -484,7 +484,7 @@ def team_page(request):
                  Artificial Intelligence.",
         },
         {
-            'name': "Piyush Kumar Singh",
+            'name': "Piyush Singh",
             'badge': "",
             'avatar_link': "",
             'github_link': "https://github.com/piyushkumarsingh",
