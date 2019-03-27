@@ -1,4 +1,5 @@
 import os
+import uuid
 
 from django.db import models
 from django.utils.translation import gettext as _
@@ -36,12 +37,40 @@ class Farmer(models.Model):
                                    validators=[validate_zip_code])
 
     date_time_created = models.DateTimeField(auto_now_add=True)
+    account_token = models.CharField(max_length=20, default=str(uuid.uuid4())[:20], blank=True)
+    is_active = models.BooleanField(default=False)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
         return reverse("forum:farmer_detail", kwargs={"pk": self.pk})
+
+    @staticmethod
+    def generate_account_token():
+        return str(uuid.uuid4()[:20])
+    
+    def refresh_account_token(self):
+        self.account_token = self.generate_account_token()
+        self.save()
+
+    def send_verification_link(self):
+        print("**** Sending SMS ... *****")
+        pass
+
+    def activate_account(self, recieved_account_token):
+        
+        if self.account_token == recieved_account_token:
+            if self.is_active:
+                return 400
+
+            else:
+                self.is_active = True
+                self.save()
+                return 200
+
+        # if account token is wrong
+        return 300
 
     @property
     def region_and_sub_region_code(self):
