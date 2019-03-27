@@ -71,7 +71,7 @@ def basic_inner_context(request):
 # Views start here
 
 
-def login(request):
+def login(request, verify_message=""):
 
     login_form = custom_forms.LoginForm()
 
@@ -88,23 +88,31 @@ def login(request):
                 farmer = Farmer.objects.get(phone_number=phone_number)
 
                 if check_password(password, farmer.password):
-                    request.session['farmer_id'] = farmer.id
-                    return redirect("forum:home")
+                    
+                    if not farmer.is_active:
+                        login_form.add_error('phone_number', _("Account is not activated"))
 
-                # Else
-                login_form.add_error('password', _("Invalid password"))
+                    else:
+                        request.session['farmer_id'] = farmer.id
+                        return redirect("forum:home")
+
+                if farmer.is_active:
+                    login_form.add_error('password', _("Invalid password"))
 
             except Farmer.DoesNotExist:
                 login_form.add_error('phone_number', _("No Farmer found with this phone number"))
 
     return render(request, "forum/outer/login.html", {
-        'form': login_form
+        'form': login_form,
+        'verify_message': verify_message
     })
 
 
 def signup(request):
 
     signup_form = custom_forms.SignupForm()
+
+    is_message_send = False
 
     if request.method == "POST":
 
@@ -119,10 +127,14 @@ def signup(request):
 
             new_farmer.save()
 
-            return redirect("forum:home")
+            # verification message send
+            new_farmer.send_verification_link()
+            is_message_send = True
+
 
     return render(request, "forum/outer/signup.html", {
-        'form': signup_form
+        'form': signup_form,
+        'is_message_send': is_message_send
     })
 
 
@@ -414,3 +426,18 @@ def upvote_answer(request):
         return HttpResponse(answer.upvotes, content_type="text/plain")
     
     raise Http404
+
+
+def verify_farmer(request, phone_number, account_token):
+
+    farmer = get_object_or_404(Farmer, phone_number=phone_number)
+
+    status = farmer.activate_account(account_token)
+    
+    message = {
+        200: _("Account activated"),
+        300: _("Link is broken"),
+        400: _("Account already activate")
+    }[status]
+
+    return login(request, verify_message=message)

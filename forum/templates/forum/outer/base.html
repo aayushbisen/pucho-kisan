@@ -1,5 +1,6 @@
 {% load static %}
 {% load i18n %}
+
 <!DOCTYPE html>
 <html>
 
@@ -88,6 +89,11 @@
     <div class="container">
 
       <div class="row">
+        
+        <div class="col s12 m6">
+          {% block content %}{% endblock content %}
+        </div>
+
         <div class="col s12 m6">
           <h4> {% trans "Get a free account" %} </h4>
           <p style="text-align:justify" class="flow-text grey-text text-darken-3">
@@ -98,13 +104,10 @@
             हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
             ने इनपुट की हैं।
 
+          </p>
+          </p>
+        </div>
 
-          </p>
-          </p>
-        </div>
-        <div class="col s12 m6">
-          {% block content %}{% endblock content %}
-        </div>
       </div>
     </div>
   </section>
