@@ -8,16 +8,7 @@
 
     <div class="card-panel grey lighten-4 grey-text z-depth-0 text-darken-4">
 
-        {% if verify_message %}
-            <div class="row card-panel green white-text z-depth-0 flow-text">
-                {{verify_message}}
-            </div>
-            <div class="row"></div>
-        {% else %}
-
-            <h4 class="row center heading-h4"> {% trans "Login" %} </h4>
-
-        {% endif %}
+        <h5 class="row center"> {% trans "Login" %} </h5>
 
         <form method="POST">
                 {% csrf_token %}
