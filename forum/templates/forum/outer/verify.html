@@ -1,0 +1,56 @@
+{% extends 'forum/outer/base.html' %}
+{% load i18n %}
+
+{% block title %} {% trans "Verify your account" %} {% endblock title %}
+
+
+{% block content %}
+
+    <div class="grey lighten-4 grey-text text-darken-4 center-align"  >
+
+            <div class="row card-panel blue darken white-text flow-text">
+                {{message}}
+            </div>
+
+            <div class="row">
+                <a href="{% url 'forum:login' %}" class="btn blue waves-effect">
+                    {% trans "Login" %}
+                </a>
+            </div>
+
+    </div>
+
+{% endblock content %}
+{% comment %} Apn ko verify-farmer/<int:phone_number></int:phone_number>/<str:account_token>  
+
+    wala url kholna pdega kisi aese farmer ka jiska account active na ho
+
+    admin kholra ek min
+    ha
+
+    username, password ?
+    super user bana raaha phir se
+    theek XD
+    time lera hai
+    bahut 
+    rukpassword bhej raha
+    user - admin
+    aezakmi98
+
+    h4 -> h5 coverted 
+    bade dikh rhe the
+
+    ha thik hai css ka kam mein kar dunga ab i18n_vala karenge
+
+    mai video ni dekha 
+
+    abe mein set karunga uske bad live shae kar lenge
+    isko git push kar du kya
+    ??
+
+    hao
+
+    abhi kr
+    terminal dekhunga XD
+
+{% endcomment %}
