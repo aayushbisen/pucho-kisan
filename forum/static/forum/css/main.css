@@ -114,3 +114,13 @@ input:focus, textarea:focus{
 {
   width:100%!important;
 }
+
+
+
+.iconss {
+  margin-right: 10px;
+}
+
+a.gh:hover {
+  color: #24292e !important;
+}
