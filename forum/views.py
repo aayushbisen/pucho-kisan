@@ -509,7 +509,7 @@ def team_page(request):
             'badge': "front end dev",
             'avatar_link': "https://avatars0.githubusercontent.com/u/40174790",
             'github_link': "https://github.com/Prateek0803",
-            'linked_in_link': "https://avatars0.githubusercontent.com/u/40174790",
+            'linked_in_link': "https://www.linkedin.com/in/prateek-chatterjee-103a6b15b/",
             'description': "Prateek is a Computer Science Undergrad, counter-strike lover and a passionate learner, loves to code in Python.",
         },
         {
