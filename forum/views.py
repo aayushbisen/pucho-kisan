@@ -7,6 +7,7 @@ from . import forms as custom_forms
 from .models import Farmer, Question, Answer, Specialist, QuestionFile
 from django.utils.translation import gettext as _
 from django.core.exceptions import ValidationError
+from django.utils.translation import get_language
 
 from .validators import validate_file_extension, validate_file_size
 
@@ -14,6 +15,27 @@ from django.contrib.auth.hashers import check_password, make_password
 from django.views import generic
 
 # Helpers
+
+def language_details(request):
+    
+    language_code = get_language()
+
+    another_language = {
+        'en': 'हिंदी',
+        'hi': 'english'
+    }[language_code]
+
+    current_url = request.get_full_path()
+
+    url_for_language_change = {
+        'hi': '/en' + current_url,
+        'en': current_url[3:],
+    }[language_code]
+
+    return {
+        'another_language': another_language,
+        'url_for_language_change': url_for_language_change
+    }
 
 
 def loggined_farmer_id(request):
@@ -58,12 +80,12 @@ def basic_inner_context(request):
     """Basic context for inner views """
 
     farmer = loggined_farmer(request)
-
     top_questions = Question.trending()
 
     return {
         'farmer': farmer,
-        'top_questions': top_questions
+        'top_questions': top_questions,
+        **language_details(request),
     }
 
 # Create your views here.
@@ -92,7 +114,7 @@ def login(request, verify_message=""):
                         login_form.add_error('phone_number', _(
                             "Account is not activated"))
 
-                    else: 
+                    else:
                         request.session['farmer_id'] = farmer.id
                         return redirect("forum:home")
 
@@ -105,7 +127,8 @@ def login(request, verify_message=""):
 
     return render(request, "forum/outer/login.html", {
         'form': login_form,
-        'verify_message': verify_message
+        'verify_message': verify_message,
+        **language_details(request),
     })
 
 
@@ -134,13 +157,17 @@ def signup(request):
 
     return render(request, "forum/outer/signup.html", {
         'form': signup_form,
-        'is_message_send': is_message_send
+        'is_message_send': is_message_send,
+        **language_details(request),
+
     })
 
 
 def goverment_rules(request):
 
-    return render(request, "forum/outer/govt_rules.html")
+    return render(request, "forum/outer/govt_rules.html", {
+        **language_details(request),
+    })
 
 
 def index(request):
@@ -493,8 +520,9 @@ def team_page(request):
             'linked_in_link': "https://www.linkedin.com/in/piyush-kumar-singh-1b8374153/",
             'description': "Piyush is a Computer Science Undergrad. Music is my world. He wants to work in the field of ML and AI",
         },
-    ] 
+    ]
 
     return render(request, "forum/outer/team_page.html", {
-        'team_data': team_data
+        'team_data': team_data,
+        **language_details(request),
     })
