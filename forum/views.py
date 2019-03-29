@@ -466,8 +466,6 @@ def team_page(request):
             'linked_in_link': "https://www.linkedin.com/in/aayush-bisen-b79268157/",
             'description': "Aayush is a Computer Science Undergrad. \
                 He is an open-source enthusiast and football lover.  ",
-            'linked_in_link': "",
-            'description': "",
         },
         {
             'name': "Prateek Chatterjee",
