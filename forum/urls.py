@@ -21,9 +21,6 @@ urlpatterns = [
     # /
     path('', views.index, name='index'),
 
-    # /en
-    path('en/', views.index, name='index_eng'),
-    path('hi/', views.index, name='index_hi'),
 
     # /farmer/<int:pk>
     path('farmer/<int:pk>', views.FarmerDetailView.as_view(), name='farmer_detail'),

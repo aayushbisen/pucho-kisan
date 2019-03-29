@@ -71,63 +71,68 @@
     </li>
   </ul>
 
+  {% block main %}
+
   <!-- Section:Slider -->
+  
 
-  <section class="slider">
-    <div class="slider">
-      <ul class="slides">
-        <li>
-          <img src="{% static 'forum/images/1.webp' %}" alt="">
-          <div class="caption left-align">
-            <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-        </li>
-        <li>
-          <img src="{% static 'forum/images/2.webp' %}" alt="">
-          <div class="caption center-align">
-            <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-        </li>
-        <li>
-          <img src="{% static 'forum/images/3.webp' %}" alt="">
-          <div class="caption right-align">
-            <h2 class="light white-text"> {% trans "Solutions for farmers by farmers !" %} </h2>
-        </li>
-      </ul>
-    </div>
-  </section>
+      <section class="slider">
+        <div class="slider">
+          <ul class="slides">
+            <li>
+              <img src="{% static 'forum/images/1.webp' %}" alt="">
+              <div class="caption left-align">
+                <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
+            </li>
+            <li>
+              <img src="{% static 'forum/images/2.webp' %}" alt="">
+              <div class="caption center-align">
+                <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
+            </li>
+            <li>
+              <img src="{% static 'forum/images/3.webp' %}" alt="">
+              <div class="caption right-align">
+                <h2 class="light white-text"> {% trans "Solutions for farmers by farmers !" %} </h2>
+            </li>
+          </ul>
+        </div>
+      </section>
 
-  <!-- Section-signup -->
+      <!-- Section-signup -->
 
-  <section class="section section-signup">
-    <div class="container">
 
-    {% block main %}
 
-      <div class="row">
+      <section class="section section-signup">
+        <div class="container">
+
+          <div class="row">
+            
+            <div class="col s12 m6">
+              {% block content %}{% endblock content %}
+            </div>
+
+            <div class="col s12 m6">
+              <h5> {% trans "Get a free account" %} </h5>
+              <p style="text-align:justify" class="flow-text grey-text text-darken-3">
+
+                किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
+                नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
+                भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
+                हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
+                ने इनपुट की हैं।
+
+              </p>
+              </p>
+            </div>
+
+          </div>
+
         
-        <div class="col s12 m6">
-          {% block content %}{% endblock content %}
         </div>
+      </section>
 
-        <div class="col s12 m6">
-          <h5> {% trans "Get a free account" %} </h5>
-          <p style="text-align:justify" class="flow-text grey-text text-darken-3">
+  {% endblock main %}
 
-            किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में
-            नवीनतम विकास के साथ किसानों को बनाए रखना है, और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है।
-            भारतीय किसान कीटों और रोगों के निदान के साथ-साथ बीज के उपयोग के लिए मार्गदर्शन के लिए एक दूसरे पर भरोसा करते
-            हैं। उनके उपाय के रूप में। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य किसानों
-            ने इनपुट की हैं।
-
-          </p>
-          </p>
-        </div>
-
-      </div>
-
-    {% endblock main %}
-    
-    </div>
-  </section>
 
 
   {% comment %} Footer {% endcomment %}
