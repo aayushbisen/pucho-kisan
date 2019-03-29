@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-18 20:35+0530\n"
+"POT-Creation-Date: 2019-03-28 02:09+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,85 +18,93 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: .\forum\forms.py:91 .\forum\models.py:32 .\forum\models.py:224
+#: .\forum\forms.py:91 .\forum\models.py:35 .\forum\models.py:280
 #: .\forum\templates\forum\inner\farmer_detail.html:19
 msgid "Phone number"
 msgstr "फ़ोन नंबर"
 
-#: .\forum\forms.py:98 .\forum\models.py:31
+#: .\forum\forms.py:98 .\forum\models.py:34
 msgid "Farmer's password"
 msgstr "किसान का पासवर्ड"
 
-#: .\forum\models.py:29
+#: .\forum\models.py:32
 msgid "Farmer's firstname"
 msgstr "किसान का पहला नाम"
 
-#: .\forum\models.py:30
+#: .\forum\models.py:33
 msgid "Farmer's surname"
 msgstr "किसान का उपनाम"
 
-#: .\forum\models.py:34
+#: .\forum\models.py:37
 msgid "Date of birth"
 msgstr "जन्म की तारीख"
 
-#: .\forum\models.py:35 .\forum\templates\forum\inner\farmer_detail.html:24
+#: .\forum\models.py:38 .\forum\templates\forum\inner\farmer_detail.html:24
 msgid "Zip code"
 msgstr "पिन कोड"
 
-#: .\forum\models.py:75 .\forum\models.py:116
-#: .\forum\templates\forum\inner\base.html:74
+#: .\forum\models.py:131 .\forum\models.py:172
+#: .\forum\templates\forum\inner\base.html:76
 msgid "Animals"
 msgstr "जानवर"
 
-#: .\forum\models.py:76 .\forum\models.py:117
-#: .\forum\templates\forum\inner\base.html:73
+#: .\forum\models.py:132 .\forum\models.py:173
+#: .\forum\templates\forum\inner\base.html:75
 msgid "Pests"
 msgstr "कीट"
 
-#: .\forum\models.py:77 .\forum\models.py:118
-#: .\forum\templates\forum\inner\base.html:75
+#: .\forum\models.py:133 .\forum\models.py:174
+#: .\forum\templates\forum\inner\base.html:77
 msgid "Purchase"
 msgstr "खरीद सुझाव"
 
-#: .\forum\models.py:78 .\forum\models.py:119
-#: .\forum\templates\forum\inner\base.html:76
+#: .\forum\models.py:134 .\forum\models.py:175
+#: .\forum\templates\forum\inner\base.html:78
 msgid "Crop"
 msgstr "खेत"
 
-#: .\forum\models.py:82
+#: .\forum\models.py:138
 msgid "Category"
 msgstr "वर्ग"
 
-#: .\forum\models.py:85 .\forum\templates\forum\inner\question_create.html:5
+#: .\forum\models.py:141 .\forum\templates\forum\inner\question_create.html:5
 #: .\forum\templates\forum\inner\question_create.html:7
 #: .\forum\templates\forum\inner\question_create.html:47
 msgid "Ask a question"
 msgstr "प्रश्न पूछें"
 
-#: .\forum\models.py:120 .\forum\templates\forum\inner\base.html:77
+#: .\forum\models.py:176 .\forum\templates\forum\inner\base.html:79
 msgid "In your area"
 msgstr "आपके क्षेत्र में"
 
-#: .\forum\models.py:186
+#: .\forum\models.py:242
 msgid "Answer the question"
 msgstr "प्रश्न का उत्तर दें"
 
-#: .\forum\models.py:237
+#: .\forum\models.py:293
 msgid "Question file"
 msgstr "प्रश्न की फाइल"
 
-#: .\forum\templates\forum\inner\base.html:72 .\forum\views.py:172
-#: .\forum\views.py:274
+#: .\forum\templates\forum\inner\base.html:15
+#: .\forum\templates\forum\outer\base.html:13
+#: .\forum\templates\forum\outer\base.html:87
+#: .\forum\templates\forum\outer\base.html:92
+#: .\forum\templates\forum\outer\base.html:97
+msgid "Solutions for farmers by farmers !"
+msgstr "किसानों द्वारा किसानों के लिए समाधान!"
+
+#: .\forum\templates\forum\inner\base.html:74 .\forum\views.py:184
+#: .\forum\views.py:288
 msgid "All"
 msgstr "सभी प्रश्न"
 
 #: .\forum\templates\forum\inner\base.html:89
-#: .\forum\templates\forum\inner\base.html:116
+#: .\forum\templates\forum\inner\base.html:125
 msgid "Install"
 msgstr "इंस्टॉल करें"
 
 #: .\forum\templates\forum\inner\base.html:93
-#: .\forum\templates\forum\inner\base.html:107
+#: .\forum\templates\forum\inner\base.html:110
 #: .\forum\templates\forum\inner\home.html:5
 #: .\forum\templates\forum\inner\home.html:7
 msgid "Home"
@@ -106,46 +114,46 @@ msgstr "घर"
 msgid "Ask"
 msgstr "पूछें"
 
-#: .\forum\templates\forum\inner\base.html:98
+#: .\forum\templates\forum\inner\base.html:100
 msgid "Specialist"
 msgstr "विशेषज्ञ"
 
-#: .\forum\templates\forum\inner\base.html:99
-#: .\forum\templates\forum\inner\base.html:111
+#: .\forum\templates\forum\inner\base.html:101
+#: .\forum\templates\forum\inner\base.html:116
 #: .\forum\templates\forum\inner\search.html:5
 #: .\forum\templates\forum\inner\search.html:7
 #: .\forum\templates\forum\inner\search.html:19
 msgid "Search"
 msgstr "खोजे"
 
-#: .\forum\templates\forum\inner\base.html:109
+#: .\forum\templates\forum\inner\base.html:112
 msgid "Ask question"
 msgstr "प्रश्न पूछें"
 
-#: .\forum\templates\forum\inner\base.html:110
+#: .\forum\templates\forum\inner\base.html:115
 #: .\forum\templates\forum\inner\specialist_list.html:5
 #: .\forum\templates\forum\inner\specialist_list.html:7
 msgid "Specialists"
 msgstr "विशेषज्ञों की सूची"
 
-#: .\forum\templates\forum\inner\base.html:112
+#: .\forum\templates\forum\inner\base.html:118
 msgid "Edit"
 msgstr "संपादित करें"
 
-#: .\forum\templates\forum\inner\base.html:113
+#: .\forum\templates\forum\inner\base.html:119
 msgid "Profile"
 msgstr "प्रोफाइल"
 
-#: .\forum\templates\forum\inner\base.html:114
+#: .\forum\templates\forum\inner\base.html:121
 msgid "Logout"
 msgstr "बाहर जाए"
 
-#: .\forum\templates\forum\inner\base.html:153
+#: .\forum\templates\forum\inner\base.html:164
 #: .\forum\templates\forum\inner\search.html:32
 msgid "Top questions"
 msgstr "शीर्ष प्रश्न"
 
-#: .\forum\templates\forum\inner\base.html:164
+#: .\forum\templates\forum\inner\base.html:176
 #: .\forum\templates\forum\inner\farmer_detail.html:45
 #: .\forum\templates\forum\inner\home.html:16
 msgid "No questions"
@@ -200,52 +208,55 @@ msgstr "परिणाम"
 msgid "No results"
 msgstr "कोई परिणाम नहीं"
 
-#: .\forum\templates\forum\outer\base.html:14
-#: .\forum\templates\forum\outer\base.html:36
-#: .\forum\templates\forum\outer\base.html:112
-#: .\forum\templates\forum\outer\base.html:129
+#: .\forum\templates\forum\outer\base.html:17
+#: .\forum\templates\forum\outer\base.html:50
+#: .\forum\templates\forum\outer\base.html:144
+#: .\forum\templates\forum\outer\base.html:165
 msgid "Kisan"
 msgstr "किसान"
 
-#: .\forum\templates\forum\outer\base.html:42
-#: .\forum\templates\forum\outer\base.html:53
-#: .\forum\templates\forum\outer\base.html:122
+#: .\forum\templates\forum\outer\base.html:58
+#: .\forum\templates\forum\outer\base.html:74
+#: .\forum\templates\forum\outer\base.html:158
 #: .\forum\templates\forum\outer\signup.html:5
-#: .\forum\templates\forum\outer\signup.html:10
-#: .\forum\templates\forum\outer\signup.html:52
+#: .\forum\templates\forum\outer\signup.html:26
+#: .\forum\templates\forum\outer\signup.html:68
 msgid "Signup"
 msgstr "साइन अप करें"
 
-#: .\forum\templates\forum\outer\base.html:43
-#: .\forum\templates\forum\outer\base.html:54
-#: .\forum\templates\forum\outer\base.html:121
+#: .\forum\templates\forum\outer\base.html:59
+#: .\forum\templates\forum\outer\base.html:75
+#: .\forum\templates\forum\outer\base.html:157
 #: .\forum\templates\forum\outer\login.html:4
-#: .\forum\templates\forum\outer\login.html:9
-#: .\forum\templates\forum\outer\login.html:25
+#: .\forum\templates\forum\outer\login.html:18
+#: .\forum\templates\forum\outer\login.html:37
+#: .\forum\templates\forum\outer\team_page.html:4
 msgid "Login"
 msgstr "लॉग इन करें"
 
-#: .\forum\templates\forum\outer\base.html:44
-#: .\forum\templates\forum\outer\base.html:55
+#: .\forum\templates\forum\outer\base.html:60
+#: .\forum\templates\forum\outer\base.html:76
 #: .\forum\templates\forum\outer\govt_rules.html:4
 msgid "Government rules"
 msgstr "सरकारी नियम"
 
-#: .\forum\templates\forum\outer\base.html:66
-#: .\forum\templates\forum\outer\base.html:71
-#: .\forum\templates\forum\outer\base.html:76
-msgid "Solutions for farmers by farmers !"
-msgstr "किसानों द्वारा किसानों के लिए समाधान!"
+#: .\forum\templates\forum\outer\base.html:62
+msgid "Team"
+msgstr "हमारे बारे में"
 
-#: .\forum\templates\forum\outer\base.html:89
+#: .\forum\templates\forum\outer\base.html:64
+msgid "Language"
+msgstr "भाषा"
+
+#: .\forum\templates\forum\outer\base.html:117
 msgid "Get a free account"
 msgstr "एक नि: शुल्क खाता प्राप्त करें"
 
-#: .\forum\templates\forum\outer\base.html:119
+#: .\forum\templates\forum\outer\base.html:155
 msgid "Learn more"
 msgstr "और अधिक जानें"
 
-#: .\forum\templates\forum\outer\base.html:130
+#: .\forum\templates\forum\outer\base.html:166
 msgid "More links"
 msgstr "अधिक लिंक"
 
@@ -261,6 +272,13 @@ msgstr "कार्यक्रम और योजनाएँ"
 #: .\forum\templates\forum\outer\govt_rules.html:81
 msgid "Click to read more."
 msgstr "और पढ़ने के लिए क्लिक करें"
+
+#: .\forum\templates\forum\outer\signup.html:13
+#: .\forum\templates\forum\outer\signup.html:18
+msgid ""
+"An verification link is send to your registered mobile number. Click the "
+"link to activate your account"
+msgstr ""
 
 #: .\forum\validators.py:24
 msgid "Only images and videos are allowed"
@@ -278,14 +296,35 @@ msgstr "एक मान्य फ़ोन नंबर दर्ज करे�
 msgid "Enter a valid zip code"
 msgstr "एक मान्य ज़िप कोड दर्ज करें"
 
-#: .\forum\views.py:95
+#: .\forum\views.py:93
+msgid "Account is not activated"
+msgstr ""
+
+#: .\forum\views.py:100
 msgid "Invalid password"
 msgstr "अवैध पासवर्ड"
 
-#: .\forum\views.py:98
+#: .\forum\views.py:104
 msgid "No Farmer found with this phone number"
 msgstr "इस फ़ोन नंबर के साथ कोई किसान नहीं मिला"
 
-#: .\forum\views.py:202
+#: .\forum\views.py:215
 msgid "Upto 10 files can be attached with a question"
 msgstr "एक प्रश्न के साथ 10 फाइलें तक संलग्न की जा सकती हैं"
+
+#: .\forum\views.py:440
+msgid "Account activated"
+msgstr ""
+
+#: .\forum\views.py:441
+msgid "Link is broken"
+msgstr ""
+
+#: .\forum\views.py:442
+msgid "Account already activate"
+msgstr ""
+
+#, fuzzy
+#~| msgid "About"
+#~ msgid "About Team"
+#~ msgstr "के बारे में"

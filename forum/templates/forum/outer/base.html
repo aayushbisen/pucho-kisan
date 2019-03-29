@@ -32,6 +32,7 @@
 </head>
 
 <body>
+
   <!--Navbar-->
   <div class="navbar-fixed">
     <nav class="blue darken-1">
@@ -43,10 +44,17 @@
 
           <a href="#" data-target="farmer-options" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
+          
+
           <ul class="right hide-on-med-and-down">
             <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
             <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
             <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+            <li>
+              <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
+              <!-- Dropdown Trigger -->
+      <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{% trans "Language" %}<i class="material-icons right">arrow_drop_down</i></a></li> -->
+            </li>
           </ul>
 
         </div>
@@ -58,6 +66,9 @@
     <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
     <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
     <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+    <li>
+        <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
+    </li>
   </ul>
 
   <!-- Section:Slider -->
@@ -98,7 +109,7 @@
         </div>
 
         <div class="col s12 m6">
-          <h4> {% trans "Get a free account" %} </h4>
+          <h5> {% trans "Get a free account" %} </h5>
           <p style="text-align:justify" class="flow-text grey-text text-darken-3">
 
             किसानों द्वारा किसानों के लिए विकसित किया गया है। हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में

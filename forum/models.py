@@ -40,7 +40,7 @@ class Farmer(models.Model):
 
     date_time_created = models.DateTimeField(auto_now_add=True)
     account_token = models.CharField(max_length=20, default=str(uuid.uuid4())[:20], blank=True)
-    is_active = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
