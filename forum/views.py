@@ -456,7 +456,7 @@ def team_page(request):
             'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
             'github_link': "https://github.com/sherlock2000",
             'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
-            'description': "Suvansh is a computer science undergrad and music lover(who doesn't loves music ?), interested in working with projects which help people at a larger scale. ",
+            'description': "Suvansh is a computer science undergrad and music lover,interested in working with projects which help people at a larger scale. ",
         },
         {
             'name': "Aayush Bisen",
@@ -473,7 +473,7 @@ def team_page(request):
             'avatar_link': "https://avatars0.githubusercontent.com/u/40174790",
             'github_link': "https://github.com/Prateek0803",
             'linked_in_link': "https://avatars0.githubusercontent.com/u/40174790",
-            'description': "Prateek is a Computer Science Undergrad, counter-strike lover and a passionate learner.loves to code in python",
+            'description': "Prateek is a Computer Science Undergrad, counter-strike lover and a passionate learner.loves to code in",
         },
         {
             'name': "Harsh Singh",
