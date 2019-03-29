@@ -478,14 +478,6 @@ def team_page(request):
 
     team_data = [
         {
-            'name': "Suvansh Rana",
-            'badge': "full stack dev",
-            'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
-            'github_link': "https://github.com/sherlock2000",
-            'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
-            'description': "Suvansh is a computer science undergrad and music lover, interested in working with projects which help people at a larger scale. ",
-        },
-        {
             'name': "Aayush Bisen",
             'badge': "front end dev",
             'avatar_link': "https://avatars3.githubusercontent.com/u/41341387",
@@ -493,14 +485,6 @@ def team_page(request):
             'linked_in_link': "https://www.linkedin.com/in/aayush-bisen-b79268157/",
             'description': "Aayush is a Computer Science Undergrad. \
                 He is an open-source enthusiast and football lover.  ",
-        },
-        {
-            'name': "Prateek Chatterjee",
-            'badge': "front end dev",
-            'avatar_link': "https://avatars0.githubusercontent.com/u/40174790",
-            'github_link': "https://github.com/Prateek0803",
-            'linked_in_link': "https://avatars0.githubusercontent.com/u/40174790",
-            'description': "Prateek is a Computer Science Undergrad, counter-strike lover and a passionate learner.loves to code in",
         },
         {
             'name': "Harsh Singh",
@@ -520,7 +504,24 @@ def team_page(request):
             'linked_in_link': "https://www.linkedin.com/in/piyush-kumar-singh-1b8374153/",
             'description': "Piyush is a Computer Science Undergrad. Music is my world. He wants to work in the field of ML and AI",
         },
-    ]
+        {
+            'name': "Prateek Chatterjee",
+            'badge': "front end dev",
+            'avatar_link': "https://avatars0.githubusercontent.com/u/40174790",
+            'github_link': "https://github.com/Prateek0803",
+            'linked_in_link': "https://avatars0.githubusercontent.com/u/40174790",
+            'description': "Prateek is a Computer Science Undergrad, counter-strike lover and a passionate learner, loves to code in Python.",
+        },
+        {
+            'name': "Suvansh Rana",
+            'badge': "full stack dev",
+            'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
+            'github_link': "https://github.com/sherlock2000",
+            'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
+            'description': "Suvansh is a computer science undergrad and music lover, interested in working with projects which help people at a larger scale. ",
+        },
+    ] 
+
 
     return render(request, "forum/outer/team_page.html", {
         'team_data': team_data,
