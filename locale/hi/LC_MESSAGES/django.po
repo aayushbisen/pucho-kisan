@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-28 02:09+0530\n"
+"POT-Creation-Date: 2019-03-29 23:39+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,14 +87,14 @@ msgstr "प्रश्न की फाइल"
 
 #: .\forum\templates\forum\inner\base.html:15
 #: .\forum\templates\forum\outer\base.html:13
-#: .\forum\templates\forum\outer\base.html:87
-#: .\forum\templates\forum\outer\base.html:92
-#: .\forum\templates\forum\outer\base.html:97
+#: .\forum\templates\forum\outer\base.html:85
+#: .\forum\templates\forum\outer\base.html:90
+#: .\forum\templates\forum\outer\base.html:95
 msgid "Solutions for farmers by farmers !"
 msgstr "किसानों द्वारा किसानों के लिए समाधान!"
 
-#: .\forum\templates\forum\inner\base.html:74 .\forum\views.py:184
-#: .\forum\views.py:288
+#: .\forum\templates\forum\inner\base.html:74 .\forum\views.py:211
+#: .\forum\views.py:315
 msgid "All"
 msgstr "सभी प्रश्न"
 
@@ -148,12 +148,12 @@ msgstr "प्रोफाइल"
 msgid "Logout"
 msgstr "बाहर जाए"
 
-#: .\forum\templates\forum\inner\base.html:164
+#: .\forum\templates\forum\inner\base.html:170
 #: .\forum\templates\forum\inner\search.html:32
 msgid "Top questions"
 msgstr "शीर्ष प्रश्न"
 
-#: .\forum\templates\forum\inner\base.html:176
+#: .\forum\templates\forum\inner\base.html:182
 #: .\forum\templates\forum\inner\farmer_detail.html:45
 #: .\forum\templates\forum\inner\home.html:16
 msgid "No questions"
@@ -209,14 +209,14 @@ msgid "No results"
 msgstr "कोई परिणाम नहीं"
 
 #: .\forum\templates\forum\outer\base.html:17
-#: .\forum\templates\forum\outer\base.html:50
+#: .\forum\templates\forum\outer\base.html:42
 #: .\forum\templates\forum\outer\base.html:144
 #: .\forum\templates\forum\outer\base.html:165
 msgid "Kisan"
 msgstr "किसान"
 
-#: .\forum\templates\forum\outer\base.html:58
-#: .\forum\templates\forum\outer\base.html:74
+#: .\forum\templates\forum\outer\base.html:50
+#: .\forum\templates\forum\outer\base.html:66
 #: .\forum\templates\forum\outer\base.html:158
 #: .\forum\templates\forum\outer\signup.html:5
 #: .\forum\templates\forum\outer\signup.html:26
@@ -224,41 +224,39 @@ msgstr "किसान"
 msgid "Signup"
 msgstr "साइन अप करें"
 
-#: .\forum\templates\forum\outer\base.html:59
-#: .\forum\templates\forum\outer\base.html:75
+#: .\forum\templates\forum\outer\base.html:51
+#: .\forum\templates\forum\outer\base.html:67
 #: .\forum\templates\forum\outer\base.html:157
 #: .\forum\templates\forum\outer\login.html:4
-#: .\forum\templates\forum\outer\login.html:18
-#: .\forum\templates\forum\outer\login.html:37
+#: .\forum\templates\forum\outer\login.html:11
+#: .\forum\templates\forum\outer\login.html:28
 #: .\forum\templates\forum\outer\team_page.html:4
+#: .\forum\templates\forum\outer\verify.html:17
 msgid "Login"
 msgstr "लॉग इन करें"
 
-#: .\forum\templates\forum\outer\base.html:60
-#: .\forum\templates\forum\outer\base.html:76
+#: .\forum\templates\forum\outer\base.html:52
+#: .\forum\templates\forum\outer\base.html:68
 #: .\forum\templates\forum\outer\govt_rules.html:4
 msgid "Government rules"
 msgstr "सरकारी नियम"
 
-#: .\forum\templates\forum\outer\base.html:62
+#: .\forum\templates\forum\outer\base.html:54
+#: .\forum\templates\forum\outer\base.html:70
 msgid "Team"
 msgstr "हमारे बारे में"
 
-#: .\forum\templates\forum\outer\base.html:64
+#: .\forum\templates\forum\outer\base.html:56
 msgid "Language"
 msgstr "भाषा"
 
-#: .\forum\templates\forum\outer\base.html:117
+#: .\forum\templates\forum\outer\base.html:115
 msgid "Get a free account"
 msgstr "एक नि: शुल्क खाता प्राप्त करें"
 
 #: .\forum\templates\forum\outer\base.html:155
 msgid "Learn more"
 msgstr "और अधिक जानें"
-
-#: .\forum\templates\forum\outer\base.html:166
-msgid "More links"
-msgstr "अधिक लिंक"
 
 #: .\forum\templates\forum\outer\govt_rules.html:9
 msgid "Programs and Schemes"
@@ -278,7 +276,11 @@ msgstr "और पढ़ने के लिए क्लिक करें"
 msgid ""
 "An verification link is send to your registered mobile number. Click the "
 "link to activate your account"
-msgstr ""
+msgstr "आपके पंजीकृत मोबाइल नंबर पर एक सत्यापन लिंक भेजा जाता है। अपने खाते को सक्रिय करने के लिए लिंक पर क्लिक करें"
+
+#: .\forum\templates\forum\outer\verify.html:4
+msgid "Verify your account"
+msgstr "अपने खाते को सत्यापित करें"
 
 #: .\forum\validators.py:24
 msgid "Only images and videos are allowed"
@@ -296,33 +298,36 @@ msgstr "एक मान्य फ़ोन नंबर दर्ज करे�
 msgid "Enter a valid zip code"
 msgstr "एक मान्य ज़िप कोड दर्ज करें"
 
-#: .\forum\views.py:93
+#: .\forum\views.py:115
 msgid "Account is not activated"
-msgstr ""
+msgstr "खाता सक्रिय नहीं है"
 
-#: .\forum\views.py:100
+#: .\forum\views.py:122
 msgid "Invalid password"
 msgstr "अवैध पासवर्ड"
 
-#: .\forum\views.py:104
+#: .\forum\views.py:126
 msgid "No Farmer found with this phone number"
 msgstr "इस फ़ोन नंबर के साथ कोई किसान नहीं मिला"
 
-#: .\forum\views.py:215
+#: .\forum\views.py:242
 msgid "Upto 10 files can be attached with a question"
 msgstr "एक प्रश्न के साथ 10 फाइलें तक संलग्न की जा सकती हैं"
 
-#: .\forum\views.py:440
+#: .\forum\views.py:467
 msgid "Account activated"
-msgstr ""
+msgstr "आपका खाता सक्रिया कर दिया गया है "
 
-#: .\forum\views.py:441
-msgid "Link is broken"
-msgstr ""
+#: .\forum\views.py:468
+msgid "This link has expired"
+msgstr "यह लिंक समाप्त हो गया है"
 
-#: .\forum\views.py:442
-msgid "Account already activate"
-msgstr ""
+#: .\forum\views.py:469
+msgid "Account is already activated"
+msgstr "खाता पहले से सक्रिय है"
+
+#~ msgid "More links"
+#~ msgstr "अधिक लिंक"
 
 #, fuzzy
 #~| msgid "About"

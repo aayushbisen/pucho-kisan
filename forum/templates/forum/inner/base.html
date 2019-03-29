@@ -123,6 +123,12 @@
           <li class="divider"></li>
           <li class="hide add_to_home_screen"><a href="#!"> <i class="material-icons left">add_to_home_screen</i>
               {% trans "Install" %} </a></li>
+           <li>
+              <a href="{{url_for_language_change}}"> 
+                <i class="material-icons left">language</i>
+                {{another_language|capfirst}}
+            </a>
+          </li>
         </ul>
       </div>
     </nav>
