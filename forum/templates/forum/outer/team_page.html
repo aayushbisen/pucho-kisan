@@ -21,32 +21,31 @@
 
     {% for member_data in team_data %}
 
-          <div class="col s12 m6">
+        <div class="col s12 m6">
+
             <div class="card">
               <div class="card-image">
                 <img src="{{member_data.avatar_link}}">
-            
               </div>
               <div class="card-content">
                 <div class="row">
-                    <span class="card-title left" style="font-weight:500" > {{member_data.name}} </span>
-                    <span class="new badge blue" data-badge-caption=""> {{member_data.badge}} </span>
+                  <span class="card-title left" style="font-weight:500; margin-left: 10px;">{{member_data.name}}</span>
+                  <span class="new badge blue" data-badge-caption="">{{member_data.badge}}</span>
                 </div>
-
                 <p> {{member_data.description}} </p>
               </div>
+
               <div class="card-action">
-                
-              <a target="_blank" href="{{member_data.github_link}}" class='blue-text btn-flat' >
-                  <i class="fab fa-github <lef></lef>t"></i> &nbsp; GITHUB
+                <a class="gh iconss blue-text text-darken-1" target="_blank" href="{{member_data.github_link}}">
+                  <i class="fab fa-github fa-3x"></i>
                 </a>     
-                <a target="_blank" href="{{member_data.linked_in_link}}" class='blue-text btn-flat' >
-                  <i class="fab fa-linkedin-in left"></i>LINKED IN
+                <a class="ln iconss blue-text text-darken-1" target="_blank" href="{{member_data.linked_in_link}}">
+                  <i class="fab fa-linkedin fa-3x"></i>
                 </a>
-            
-          
               </div>
+
             </div>
+
           </div>
 
     {% endfor %}
