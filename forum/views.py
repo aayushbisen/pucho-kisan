@@ -152,7 +152,7 @@ def signup(request):
             new_farmer.save()
 
             # verification message send
-            # new_farmer.send_verification_link()
+            new_farmer.send_verification_link()
             is_message_send = True
 
     return render(request, "forum/outer/signup.html", {
