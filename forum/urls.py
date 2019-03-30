@@ -52,7 +52,7 @@ urlpatterns = [
     # upvote-answer/
     path("upvote-answer/", views.upvote_answer, name="upvote_answer"),
 
-    path("verify-farmer/<int:phone_number>/<str:account_token>/",
+    path("<int:phone_number>/<str:account_token>/",
          views.verify_farmer, name="verify_farmer"),
 
     path("team-page/", views.team_page, name="team_page"),
