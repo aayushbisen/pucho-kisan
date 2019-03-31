@@ -55,6 +55,7 @@
               <!-- Dropdown Trigger -->
       <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{% trans "Language" %}<i class="material-icons right">arrow_drop_down</i></a></li> -->
             </li>
+            <li> <a href=" {% url 'forum:feedback' %} "> {% trans "Give Feedback" %} </a> </li>
           </ul>
 
         </div>
@@ -69,6 +70,7 @@
     <li>
         <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
     </li>
+    <li> <a href=" {% url 'forum:feedback' %} "> {% trans "Give Feedback" %} </a> </li>
   </ul>
 
   {% block main %}

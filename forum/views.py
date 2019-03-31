@@ -530,4 +530,6 @@ def team_page(request):
 
 
 def feedback(request):
-    return render(request, "forum/outer/feedback.html")
+    return render(request, "forum/outer/feedback.html", {
+        **language_details(request),
+    })

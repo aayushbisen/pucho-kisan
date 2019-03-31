@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-29 23:39+0530\n"
+"POT-Creation-Date: 2019-03-31 22:36+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -87,9 +87,9 @@ msgstr "प्रश्न की फाइल"
 
 #: .\forum\templates\forum\inner\base.html:15
 #: .\forum\templates\forum\outer\base.html:13
-#: .\forum\templates\forum\outer\base.html:85
-#: .\forum\templates\forum\outer\base.html:90
-#: .\forum\templates\forum\outer\base.html:95
+#: .\forum\templates\forum\outer\base.html:87
+#: .\forum\templates\forum\outer\base.html:92
+#: .\forum\templates\forum\outer\base.html:97
 msgid "Solutions for farmers by farmers !"
 msgstr "किसानों द्वारा किसानों के लिए समाधान!"
 
@@ -210,14 +210,14 @@ msgstr "कोई परिणाम नहीं"
 
 #: .\forum\templates\forum\outer\base.html:17
 #: .\forum\templates\forum\outer\base.html:42
-#: .\forum\templates\forum\outer\base.html:144
-#: .\forum\templates\forum\outer\base.html:165
+#: .\forum\templates\forum\outer\base.html:146
+#: .\forum\templates\forum\outer\base.html:167
 msgid "Kisan"
 msgstr "किसान"
 
 #: .\forum\templates\forum\outer\base.html:50
-#: .\forum\templates\forum\outer\base.html:66
-#: .\forum\templates\forum\outer\base.html:158
+#: .\forum\templates\forum\outer\base.html:67
+#: .\forum\templates\forum\outer\base.html:160
 #: .\forum\templates\forum\outer\signup.html:5
 #: .\forum\templates\forum\outer\signup.html:26
 #: .\forum\templates\forum\outer\signup.html:68
@@ -225,8 +225,8 @@ msgid "Signup"
 msgstr "साइन अप करें"
 
 #: .\forum\templates\forum\outer\base.html:51
-#: .\forum\templates\forum\outer\base.html:67
-#: .\forum\templates\forum\outer\base.html:157
+#: .\forum\templates\forum\outer\base.html:68
+#: .\forum\templates\forum\outer\base.html:159
 #: .\forum\templates\forum\outer\login.html:4
 #: .\forum\templates\forum\outer\login.html:11
 #: .\forum\templates\forum\outer\login.html:28
@@ -236,13 +236,13 @@ msgid "Login"
 msgstr "लॉग इन करें"
 
 #: .\forum\templates\forum\outer\base.html:52
-#: .\forum\templates\forum\outer\base.html:68
+#: .\forum\templates\forum\outer\base.html:69
 #: .\forum\templates\forum\outer\govt_rules.html:4
 msgid "Government rules"
 msgstr "सरकारी नियम"
 
 #: .\forum\templates\forum\outer\base.html:54
-#: .\forum\templates\forum\outer\base.html:70
+#: .\forum\templates\forum\outer\base.html:71
 msgid "Team"
 msgstr "हमारे बारे में"
 
@@ -250,11 +250,17 @@ msgstr "हमारे बारे में"
 msgid "Language"
 msgstr "भाषा"
 
-#: .\forum\templates\forum\outer\base.html:115
+#: .\forum\templates\forum\outer\base.html:58
+#: .\forum\templates\forum\outer\base.html:73
+#: .\forum\templates\forum\outer\feedback.html:4
+msgid "Give Feedback"
+msgstr "सुझाव दें"
+
+#: .\forum\templates\forum\outer\base.html:117
 msgid "Get a free account"
 msgstr "एक नि: शुल्क खाता प्राप्त करें"
 
-#: .\forum\templates\forum\outer\base.html:155
+#: .\forum\templates\forum\outer\base.html:157
 msgid "Learn more"
 msgstr "और अधिक जानें"
 
@@ -276,7 +282,9 @@ msgstr "और पढ़ने के लिए क्लिक करें"
 msgid ""
 "An verification link is send to your registered mobile number. Click the "
 "link to activate your account"
-msgstr "आपके पंजीकृत मोबाइल नंबर पर एक सत्यापन लिंक भेजा जाता है। अपने खाते को सक्रिय करने के लिए लिंक पर क्लिक करें"
+msgstr ""
+"आपके पंजीकृत मोबाइल नंबर पर एक सत्यापन लिंक भेजा जाता है। अपने खाते को सक्रिय करने के लिए "
+"लिंक पर क्लिक करें"
 
 #: .\forum\templates\forum\outer\verify.html:4
 msgid "Verify your account"
