@@ -527,3 +527,7 @@ def team_page(request):
         'team_data': team_data,
         **language_details(request),
     })
+
+
+def feedback(request):
+    return render(request, "forum/outer/feedback.html")

@@ -56,4 +56,6 @@ urlpatterns = [
          views.verify_farmer, name="verify_farmer"),
 
     path("team-page/", views.team_page, name="team_page"),
+
+    path("feedback/", views.feedback, name="feedback"),
 ]
