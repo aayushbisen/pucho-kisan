@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-31 22:36+0530\n"
+"POT-Creation-Date: 2019-04-05 18:14+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -210,14 +210,15 @@ msgstr "कोई परिणाम नहीं"
 
 #: .\forum\templates\forum\outer\base.html:17
 #: .\forum\templates\forum\outer\base.html:42
-#: .\forum\templates\forum\outer\base.html:146
-#: .\forum\templates\forum\outer\base.html:167
+#: .\forum\templates\forum\outer\base.html:139
+#: .\forum\templates\forum\outer\base.html:155
 msgid "Kisan"
 msgstr "किसान"
 
 #: .\forum\templates\forum\outer\base.html:50
 #: .\forum\templates\forum\outer\base.html:67
-#: .\forum\templates\forum\outer\base.html:160
+#: .\forum\templates\forum\outer\base.html:148
+#: .\forum\templates\forum\outer\login.html:31
 #: .\forum\templates\forum\outer\signup.html:5
 #: .\forum\templates\forum\outer\signup.html:26
 #: .\forum\templates\forum\outer\signup.html:68
@@ -226,7 +227,7 @@ msgstr "साइन अप करें"
 
 #: .\forum\templates\forum\outer\base.html:51
 #: .\forum\templates\forum\outer\base.html:68
-#: .\forum\templates\forum\outer\base.html:159
+#: .\forum\templates\forum\outer\base.html:147
 #: .\forum\templates\forum\outer\login.html:4
 #: .\forum\templates\forum\outer\login.html:11
 #: .\forum\templates\forum\outer\login.html:28
@@ -260,7 +261,23 @@ msgstr "सुझाव दें"
 msgid "Get a free account"
 msgstr "एक नि: शुल्क खाता प्राप्त करें"
 
-#: .\forum\templates\forum\outer\base.html:157
+#: .\forum\templates\forum\outer\base.html:119
+#: .\forum\templates\forum\outer\base.html:141
+msgid ""
+"Our objective is to keep farmers in tune with the latest developments in "
+"relevant technologies, and to harness these emerging opportunities in "
+"transforming their lives. Indian farmers rely on each other for guidance on "
+"the type of seeds to use, diagnosis of pests and diseases as well as their "
+"remedies. In the ideal situation farmers will be able to login to see "
+"information that other farmers have inputted."
+msgstr ""
+"हमारा उद्देश्य प्रासंगिक प्रौद्योगिकियों में नवीनतम विकास के साथ किसानों को बनाए रखना है, "
+"और उनके जीवन को बदलने में इन उभरते अवसरों का दोहन करना है। भारतीय किसान कीटों और "
+"रोगों के निदान के साथ-साथ उनके उपचार के लिए बीज के प्रकार पर मार्गदर्शन के लिए एक-दूसरे "
+"पर निर्भर हैं। आदर्श स्थिति में किसान उन सूचनाओं को देखने के लिए लॉगिन कर सकेंगे जो अन्य "
+"किसानों ने इनपुट की हैं।"
+
+#: .\forum\templates\forum\outer\base.html:145
 msgid "Learn more"
 msgstr "और अधिक जानें"
 
