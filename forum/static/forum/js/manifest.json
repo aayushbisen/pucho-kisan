@@ -1,8 +1,8 @@
 {
   "name": "पूछो किसान",
   "short_name": "Kisan",
-  "theme_color": "#1e88e5",
-  "background_color": "#1e88e5",
+  "theme_color": "#1565c0",
+  "background_color": "#1565c0",
   "display": "standalone",
   "Scope": "/",
   "start_url": "/?home_screen=yes",
