@@ -4,7 +4,7 @@ import requests
 from urllib.parse import urlencode
 
 from django.db import models
-from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import reverse
 from django.template.loader import render_to_string
 from .validators import (

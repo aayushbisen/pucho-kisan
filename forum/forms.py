@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.utils import ErrorList
 from .models import Farmer, Question, Answer
-from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _
 
 
 class PlainErrorList(ErrorList):
