@@ -5,7 +5,7 @@ from django.shortcuts import (
 
 from . import forms as custom_forms
 from .models import Farmer, Question, Answer, Specialist, QuestionFile
-from django.utils.translation import gettext as _
+from django.utils.translation import ugettext_lazy as _
 from django.core.exceptions import ValidationError
 from django.utils.translation import get_language
 
@@ -165,7 +165,36 @@ def signup(request):
 
 def goverment_rules(request):
 
+    rules = [
+        {
+            'name': _("Rastriya Krishi Vikas Yojna (RKVY)"),
+            'description': _("It is implemented with a view to promote organic farming in the country. To improve soil health and organic matter content and increase net income of the farmer so as to realise premium prices.  Under this scheme, an area of 5 lakh acre is targeted to be covered though 10,000 clusters of 50 acre each, from the year 2015-16 to 2017-18."),
+            'link': 'http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseFive'
+        },
+        {
+            'name': _("Crop Insurance"),
+            'description': _("Crop insurance is purchased by agricultural producers, and subsidized by the federal government, to protect against either the loss of their crops due to natural disasters, such as hail, drought, and floods, or the loss of revenue due to declines in the prices of agricultural commodities."),
+            'link': 'http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne'
+        },
+        {
+            'name': _("National Mission on Sustainable Agriculture (NMSA)"),
+            'description': _("NMSA is one of the eight Missions under National Action Plan on Climate Change (NAPCC). It aims at promoting Sustainable Agriculture through climate change adaptation measures, enhancing agriculture productivity especially in rainfed areas focusing on integrated farming, soil health management, and synergizing resource conservation. NMSA as a programmatic intervention caters to Mission Deliverables that focuses mainly on conservation agriculture to make farm sector more productive, sustainable, remunerative and climate resilient by promoting location specific integrated/composite farming systems."),
+            'link': 'http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne'
+        },
+        {
+            'name': _("National Food Security Mission (NFSM)"),
+            'description': _("In view of the stagnating food grain production and an increasing consumption need of the growing population, Government of India has launched this Centrally Sponsored Scheme, ‘National Food Security Mission’ in October 2007. The Mission met with an overwhelming success and achieved the targeted additional production of rice, wheat and pulses. The Mission continued during 12th Five Year Plan with new targets of additional production of food grains of 25 million tonnes of food grains comprising of 10 million tonnes rice, 8 million tonnes of wheat, 4 million tonnes of pulses and 3 million tonnes of coarse cereals by the end of 12th Five Year Plan."),
+            'link': 'http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne'
+        },
+        {
+            'name': _("National Mission on Agriculture Extension & Technology (NMAET)"),
+            'description': _("The objective of the Scheme is to make the extension system farmer-driven and farmer-accountable by way of new institutional arrangements for technology dissemination. It aims to restructure and strengthen agricultural extension to enable delivery of appropriate technology and improved agronomic practices to farmers."),
+            'link': 'http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne'
+        }
+    ]
+
     return render(request, "forum/outer/govt_rules.html", {
+        "rules": rules,
         **language_details(request),
     })
 

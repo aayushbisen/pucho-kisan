@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-10 18:38+0530\n"
+"POT-Creation-Date: 2019-04-10 22:05+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -93,8 +93,8 @@ msgstr "प्रश्न की फाइल"
 msgid "Solutions for farmers by farmers !"
 msgstr "किसानों द्वारा किसानों के लिए समाधान!"
 
-#: .\forum\templates\forum\inner\base.html:74 .\forum\views.py:211
-#: .\forum\views.py:315
+#: .\forum\templates\forum\inner\base.html:74 .\forum\views.py:240
+#: .\forum\views.py:344
 msgid "All"
 msgstr "सभी प्रश्न"
 
@@ -220,8 +220,8 @@ msgstr "करें"
 #: .\forum\templates\forum\outer\base.html:42
 #: .\forum\templates\forum\outer\base.html:139
 #: .\forum\templates\forum\outer\base.html:155
-msgid "Kisan"
-msgstr "किसान"
+msgid "Pucho Kisan"
+msgstr "पूछो किसान"
 
 #: .\forum\templates\forum\outer\base.html:50
 #: .\forum\templates\forum\outer\base.html:67
@@ -293,12 +293,7 @@ msgstr "और अधिक जानें"
 msgid "Programs and Schemes"
 msgstr "कार्यक्रम और योजनाएँ"
 
-#: .\forum\templates\forum\outer\govt_rules.html:22
-#: .\forum\templates\forum\outer\govt_rules.html:34
-#: .\forum\templates\forum\outer\govt_rules.html:48
-#: .\forum\templates\forum\outer\govt_rules.html:59
-#: .\forum\templates\forum\outer\govt_rules.html:72
-#: .\forum\templates\forum\outer\govt_rules.html:81
+#: .\forum\templates\forum\outer\govt_rules.html:18
 msgid "Click to read more."
 msgstr "और पढ़ने के लिए क्लिक करें"
 
@@ -343,19 +338,115 @@ msgstr "अवैध पासवर्ड"
 msgid "No Farmer found with this phone number"
 msgstr "इस फ़ोन नंबर के साथ कोई किसान नहीं मिला"
 
-#: .\forum\views.py:242
+#: .\forum\views.py:170
+msgid "Rastriya Krishi Vikas Yojna (RKVY)"
+msgstr "राष्ट्रीय कृषि विकास योजना (RKVY)"
+
+#: .\forum\views.py:171
+msgid ""
+"It is implemented with a view to promote organic farming in the country. To "
+"improve soil health and organic matter content and increase net income of "
+"the farmer so as to realise premium prices.  Under this scheme, an area of 5 "
+"lakh acre is targeted to be covered though 10,000 clusters of 50 acre each, "
+"from the year 2015-16 to 2017-18."
+msgstr ""
+"इसे देश में जैविक खेती को बढ़ावा देने के उद्देश्य से लागू किया गया है। मृदा स्वास्थ्य और जैविक "
+"पदार्थ की मात्रा में सुधार करना और किसान की शुद्ध आय में वृद्धि करना ताकि प्रीमियम कीमतों "
+"का एहसास हो सके। इस योजना के तहत, 5 लाख एकड़ के क्षेत्र को कवर करने का लक्ष्य रखा गया "
+"है, जबकि वर्ष 2015-16 से 2017-18 तक प्रत्येक में 50 एकड़ के 10,000 क्लस्टर शामिल हैं।"
+
+#: .\forum\views.py:175
+msgid "Crop Insurance"
+msgstr "फसल बीमा"
+
+#: .\forum\views.py:176
+msgid ""
+"Crop insurance is purchased by agricultural producers, and subsidized by the "
+"federal government, to protect against either the loss of their crops due to "
+"natural disasters, such as hail, drought, and floods, or the loss of revenue "
+"due to declines in the prices of agricultural commodities."
+msgstr ""
+"कृषि उत्पादकों द्वारा फसल बीमा खरीदा जाता है, और प्राकृतिक आपदाओं, जैसे ओलावृष्टि, सूखा "
+"और बाढ़ के कारण उनकी फसलों के नुकसान से बचाने के लिए या संघीय सरकार द्वारा सब्सिडी दी "
+"जाती है, या कीमतों में गिरावट के कारण राजस्व का नुकसान होता है।"
+
+#: .\forum\views.py:180
+msgid "National Mission on Sustainable Agriculture (NMSA)"
+msgstr "सतत कृषि पर राष्ट्रीय मिशन (NMSA)"
+
+#: .\forum\views.py:181
+msgid ""
+"NMSA is one of the eight Missions under National Action Plan on Climate "
+"Change (NAPCC). It aims at promoting Sustainable Agriculture through climate "
+"change adaptation measures, enhancing agriculture productivity especially in "
+"rainfed areas focusing on integrated farming, soil health management, and "
+"synergizing resource conservation. NMSA as a programmatic intervention "
+"caters to Mission Deliverables that focuses mainly on conservation "
+"agriculture to make farm sector more productive, sustainable, remunerative "
+"and climate resilient by promoting location specific integrated/composite "
+"farming systems."
+msgstr ""
+"एनएमएसए नेशनल एक्शन प्लान ऑन क्लाइमेट चेंज (एनएपीसीसी) के तहत आठ मिशनों में से एक है। "
+"इसका उद्देश्य जलवायु परिवर्तन अनुकूलन उपायों के माध्यम से सतत कृषि को बढ़ावा देना है, विशेष "
+"रूप से वर्षा आधारित क्षेत्रों में कृषि उत्पादकता को बढ़ाना, एकीकृत खेती, मृदा स्वास्थ्य प्रबंधन "
+"और संसाधन संरक्षण पर जोर देना। NMSA एक प्रोग्रामेटिक हस्तक्षेप के रूप में मिशन डेलीवेबल्स को "
+"पूरा करता है जो मुख्य रूप से एकीकृत क्षेत्र / एकीकृत कृषि प्रणालियों को बढ़ावा देकर कृषि क्षेत्र "
+"को अधिक उत्पादक, टिकाऊ, पारिश्रमिक और जलवायु लचीला बनाने के लिए संरक्षण कृषि पर "
+"केंद्रित है।"
+
+#: .\forum\views.py:185
+msgid "National Food Security Mission (NFSM)"
+msgstr "राष्ट्रीय खाद्य सुरक्षा मिशन (NFSM)"
+
+#: .\forum\views.py:186
+msgid ""
+"In view of the stagnating food grain production and an increasing "
+"consumption need of the growing population, Government of India has launched "
+"this Centrally Sponsored Scheme, ‘National Food Security Mission’ in October "
+"2007. The Mission met with an overwhelming success and achieved the targeted "
+"additional production of rice, wheat and pulses. The Mission continued "
+"during 12th Five Year Plan with new targets of additional production of food "
+"grains of 25 million tonnes of food grains comprising of 10 million tonnes "
+"rice, 8 million tonnes of wheat, 4 million tonnes of pulses and 3 million "
+"tonnes of coarse cereals by the end of 12th Five Year Plan."
+msgstr ""
+"बढ़ती खाद्यान्न उत्पादन और बढ़ती जनसंख्या की बढ़ती खपत की जरूरतों के मद्देनजर, भारत सरकार "
+"ने अक्टूबर 2007 में इस केंद्र प्रायोजित योजना, Scheme राष्ट्रीय खाद्य सुरक्षा मिशन ’की "
+"शुरुआत की। मिशन ने भारी सफलता के साथ मुलाकात की और चावल, गेहूं और दालों के लक्षित "
+"अतिरिक्त उत्पादन को प्राप्त किया। मिशन 10 मिलियन टन चावल, 8 मिलियन टन गेहूं, 4 "
+"मिलियन टन दालों और 3 मिलियन टन मोटे अनाज के 25 मिलियन टन खाद्यान्न के अतिरिक्त "
+"उत्पादन के नए लक्ष्य के साथ 12 वीं पंचवर्षीय योजना के दौरान जारी रहा।"
+
+#: .\forum\views.py:190
+msgid "National Mission on Agriculture Extension & Technology (NMAET)"
+msgstr "कृषि विस्तार और प्रौद्योगिकी पर राष्ट्रीय मिशन (NMAET)"
+
+#: .\forum\views.py:191
+msgid ""
+"The objective of the Scheme is to make the extension system farmer-driven "
+"and farmer-accountable by way of new institutional arrangements for "
+"technology dissemination. It aims to restructure and strengthen agricultural "
+"extension to enable delivery of appropriate technology and improved "
+"agronomic practices to farmers."
+msgstr ""
+"योजना का उद्देश्य प्रौद्योगिकी प्रसार के लिए नई संस्थागत व्यवस्था के माध्यम से विस्तार "
+"प्रणाली को किसान-संचालित और किसान-जवाबदेह बनाना है। इसका उद्देश्य किसानों को उपयुक्त "
+"प्रौद्योगिकी के वितरण और कृषि संबंधी कृषि पद्धतियों को बेहतर बनाने के लिए कृषि विस्तार का "
+"पुनर्गठन और सुदृढ़ीकरण करना है।"
+
+#: .\forum\views.py:271
 msgid "Upto 10 files can be attached with a question"
 msgstr "एक प्रश्न के साथ 10 फाइलें तक संलग्न की जा सकती हैं"
 
-#: .\forum\views.py:467
+#: .\forum\views.py:496
 msgid "Account activated"
 msgstr "आपका खाता सक्रिया कर दिया गया है "
 
-#: .\forum\views.py:468
+#: .\forum\views.py:497
 msgid "This link has expired"
 msgstr "यह लिंक समाप्त हो गया है"
 
-#: .\forum\views.py:469
+#: .\forum\views.py:498
 msgid "Account is already activated"
 msgstr "खाता पहले से सक्रिय है"
 

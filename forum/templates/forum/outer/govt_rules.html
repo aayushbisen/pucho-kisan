@@ -9,80 +9,18 @@
         <h5 class="center"> {% trans "Programs and Schemes" %}</h5>
         <div class="col s12">
             <ul class="collapsible">
+                {% for rule in rules %}
                     <li>
-                        <div class="collapsible-header">
-                           राष्ट्रीय कृषि विकास योजना (रकव्य)
-                            <i class="material-icons">keyboard_arrow_down</i>
-                        </div>
-
+                        <div class="collapsible-header"> {{ rule.name }} <i class="material-icons">keyboard_arrow_down</i></div>
                         <div class="collapsible-body">
-                            <span>
-                                इसे देश में जैविक खेती को बढ़ावा देने के उद्देश्य से लागू किया गया है। मृदा स्वास्थ्य और जैविक पदार्थ की मात्रा में सुधार करना और किसान की शुद्ध आय में वृद्धि करना ताकि प्रीमियम कीमतों का एहसास हो सके। इस योजना के तहत, 5 लाख एकड़ के क्षेत्र को कवर करने का लक्ष्य रखा गया है, जबकि वर्ष 2015-16 से 2017-18 तक प्रत्येक में 50 एकड़ के 10,000 क्लस्टर शामिल हैं।
-                                    <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseFive">
-                                    {% trans "Click to read more." %}
-                                    </a> 
+                            <span> {{ rule.description }}
+                                <a href="{{ rule.link }}">
+                                    {% trans "Click to read more." %} 
+                                </a> 
                             </span>
                         </div>
                     </li>
-                    <li>
-                        <div class="collapsible-header"> फसल बीमा <i class="material-icons">keyboard_arrow_down</i></div>
-                        <div class="collapsible-body">
-                            <span>
-                               कृषि उत्पादकों द्वारा फसल बीमा खरीदा जाता है, और प्राकृतिक आपदाओं, जैसे ओलावृष्टि, सूखा और बाढ़ के कारण उनकी फसलों के नुकसान से बचाने के लिए या संघीय सरकार द्वारा सब्सिडी दी जाती है, या कीमतों में गिरावट के कारण राजस्व का नुकसान होता है। कृषि माल।
-                            
-                                <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne">
-                                 {% trans "Click to read more." %}</a> 
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                           सतत कृषि पर राष्ट्रीय मिशन (NMSA)
-                            <i class="material-icons ">keyboard_arrow_down</i>
-                        </div>
-                        <div class="collapsible-body">
-                            <span>
-                                
-                            एनएमएसए नेशनल एक्शन प्लान ऑन क्लाइमेट चेंज (एनएपीसीसी) के तहत आठ मिशनों में से एक है। इसका उद्देश्य जलवायु परिवर्तन अनुकूलन उपायों के माध्यम से सतत कृषि को बढ़ावा देना है, विशेष रूप से वर्षा आधारित क्षेत्रों में कृषि उत्पादकता को बढ़ाना, एकीकृत खेती, मृदा स्वास्थ्य प्रबंधन और संसाधन संरक्षण पर जोर देना।
-                            NMSA एक प्रोग्रामेटिक हस्तक्षेप के रूप में मिशन डेलीवेबल्स को पूरा करता है जो मुख्य रूप से एकीकृत क्षेत्र / एकीकृत कृषि प्रणालियों को बढ़ावा देकर कृषि क्षेत्र को अधिक उत्पादक, टिकाऊ, पारिश्रमिक और जलवायु लचीला बनाने के लिए संरक्षण कृषि पर केंद्रित है। 
-                                <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne"> {% trans "Click to read more." %}</a>    
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">राष्ट्रीय खाद्य सुरक्षा मिशन (NFSM)<i class="material-icons " >keyboard_arrow_down</i></div>
-                        <div class="collapsible-body">
-                            <span>
-                            बढ़ती खाद्यान्न उत्पादन और बढ़ती जनसंख्या की बढ़ती खपत की जरूरतों के मद्देनजर, भारत सरकार ने अक्टूबर 2007 में इस केंद्र प्रायोजित योजना, Scheme राष्ट्रीय खाद्य सुरक्षा मिशन ’की शुरुआत की।
-                              िशन ने भारी सफलता के साथ मुलाकात की और चावल, गेहूं और दालों के लक्षित अतिरिक्त उत्पादन को प्राप्त किया। मिशन 10                              मिलियन टन चावल, 8 मिलियन टन गेहूं, 4 मिलियन टन दालों और 3 मिलियन टन मोटे अनाज के 25 मिलियन टन खाद्यान्न के                                    अतिरिक्त उत्पादन के नए लक्ष्य के साथ 12 वीं पंचवर्षीय योजना के दौरान जारी रहा। 12 वीं पंचवर्षीय योजना का अंत।
-                            
-                            <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne"> {% trans "Click to read more." %}</a> 
-                                
-                            </span></div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">
-                           तिलहन और तेल फार्म पर राष्ट्रीय मिशन (NMOOP)
-                            <i class="material-icons" >keyboard_arrow_down</i>
-                        </div>
-                        
-                        <div class="collapsible-body">
-                            <span>
-                                भारत प्रमुख तिलहन उत्पादकों में से एक है और खाद्य तेलों का आयातक है। संयुक्त राज्य अमेरिका, चीन और ब्राजील के बाद भारत की वनस्पति तेल अर्थव्यवस्था दुनिया की चौथी सबसे बड़ी है। तिलहन का सकल फसल क्षेत्र का 13%, सकल राष्ट्रीय उत्पाद का 3% और सभी कृषि वस्तुओं का 10% मूल्य है। इस क्षेत्र ने पिछले दशक (1999-2009) के दौरान क्रमशः क्षेत्र, उत्पादन और उपज की वार्षिक वृद्धि दर 2.44%, 5.47% और 2.96% दर्ज की है।
-                            <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne"> {% trans "Click to read more." %}</a> 
-                            </span>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="collapsible-header">कृषि विस्तार और प्रौद्योगिकी पर राष्ट्रीय मिशन (NMAET)<i class="material-icons ">keyboard_arrow_down</i></div>
-                        <div class="collapsible-body">
-                            <span>
-                               योजना का उद्देश्य प्रौद्योगिकी प्रसार के लिए नई संस्थागत व्यवस्था के माध्यम से विस्तार प्रणाली को किसान-संचालित और किसान-जवाबदेह बनाना है। इसका उद्देश्य किसानों को उपयुक्त प्रौद्योगिकी के वितरण और कृषि संबंधी कृषि पद्धतियों को बेहतर बनाने के लिए कृषि विस्तार का पुनर्गठन और सुदृढ़ीकरण करना है।
-                                <a href="http://agriportal.cg.nic.in/agridept/AgriEn/CentralScheme.html#collapseOne"> {% trans "Click to read more." %}</a> 
-                                
-                            </span>
-                        </div>
-                    </li>          
+                {% endfor %}         
             </ul>
         </div>
     </div>
