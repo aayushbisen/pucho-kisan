@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-05 18:14+0530\n"
+"POT-Creation-Date: 2019-04-10 18:38+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -170,7 +170,7 @@ msgstr "पूछे गए सवाल"
 #: .\forum\templates\forum\inner\farmer_edit.html:5
 #: .\forum\templates\forum\inner\farmer_edit.html:7
 msgid "Edit your details"
-msgstr "अपने विवरण संपादित करें"
+msgstr "अपना विवरण बदलें"
 
 #: .\forum\templates\forum\inner\farmer_edit.html:51
 msgid "Save"
@@ -181,8 +181,8 @@ msgid "Add files"
 msgstr "फाइलें जोड़ो"
 
 #: .\forum\templates\forum\inner\question_detail.html:8
-msgid "Give Answers to questions"
-msgstr "जवाब दे"
+msgid "Give Solution"
+msgstr "उत्तर दीजिये"
 
 #: .\forum\templates\forum\inner\question_detail.html:33
 msgid "answer"
@@ -207,6 +207,14 @@ msgstr "परिणाम"
 #: .\forum\templates\forum\inner\search.html:41
 msgid "No results"
 msgstr "कोई परिणाम नहीं"
+
+#: .\forum\templates\forum\inner\specialist_list.html:16
+msgid "Want to help farmers? Join our panel of specialists. Contact us"
+msgstr "किसानों की मदद करना चाहते हैं? विशेषज्ञों के हमारे पैनल में शामिल हों। हमसे संपर्क"
+
+#: .\forum\templates\forum\inner\specialist_list.html:16
+msgid "here"
+msgstr "करें"
 
 #: .\forum\templates\forum\outer\base.html:17
 #: .\forum\templates\forum\outer\base.html:42
@@ -350,6 +358,11 @@ msgstr "यह लिंक समाप्त हो गया है"
 #: .\forum\views.py:469
 msgid "Account is already activated"
 msgstr "खाता पहले से सक्रिय है"
+
+#, fuzzy
+#~| msgid "Answers"
+#~ msgid "Give Answer"
+#~ msgstr "उत्तर दीजिये"
 
 #~ msgid "More links"
 #~ msgstr "अधिक लिंक"
