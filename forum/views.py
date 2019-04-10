@@ -509,7 +509,7 @@ def team_page(request):
         {
             'name': "Aayush Bisen",
             'badge': "front end dev",
-            'avatar_link': "https://github.com/aayushbisen/learngit/blob/master/meet_team-min_o.jpg?raw=true",
+            'avatar_link': "https://avatars2.githubusercontent.com/u/41341387",
             'github_link': "https://github.com/aayushbisen",
             'linked_in_link': "https://www.linkedin.com/in/aayush-bisen-b79268157/",
             'description': "Aayush is a Computer Science Undergrad. \
