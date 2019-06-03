@@ -29,14 +29,11 @@ class Farmer(models.Model):
     a farmer is usually a farm owner, while employees
     of the farm are known as farm workers, or farmhands """
 
-    first_name = models.CharField(_("Farmer's firstname"), max_length=50)
-    last_name = models.CharField(_("Farmer's surname"), max_length=50)
+    name = models.CharField(_("Farmer's name"), max_length=50)
     password = models.CharField(_("Farmer's password"), max_length=100)
     phone_number = models.CharField(_("Phone number"), max_length=20, unique=True)
-    dob = models.DateField(
-        _("Date of birth"), auto_now=False, auto_now_add=False)
     zip_code = models.IntegerField(_("Zip code"),
-                                   validators=[validate_zip_code])
+                                   validators=[validate_zip_code], blank=True)
 
     date_time_created = models.DateTimeField(auto_now_add=True)
     account_token = models.CharField(max_length=20, default=str(uuid.uuid4())[:20], blank=True)

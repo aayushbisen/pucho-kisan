@@ -36,30 +36,31 @@
   <!--Navbar-->
   <div class="navbar-fixed">
     <nav class="blue darken-3">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="{% url 'forum:index' %}" class="brand-logo logo-custom">
-            <b> {% trans "Kisan" %} </b>
-          </a>
 
-          <a href="#" data-target="farmer-options" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <div class="row">
+        <div class="col s12">
+            <div class="nav-wrapper">
+   
+              <a href="{% url 'forum:index' %}" class="brand-logo logo-custom no-underline">
+                <b class="custom-font" > {% trans "Kisan" %} </b>
+              </a>
 
-          
+              <a href="#" data-target="farmer-options" class="sidenav-trigger no-underline"><i class="material-icons">menu</i></a>
 
-          <ul class="right hide-on-med-and-down">
-            <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
-            <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-            <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
-            <li>
-              <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
-              <!-- Dropdown Trigger -->
-      <!-- <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">{% trans "Language" %}<i class="material-icons right">arrow_drop_down</i></a></li> -->
-            </li>
-            <li> <a href=" {% url 'forum:feedback' %} "> {% trans "Give Feedback" %} </a> </li>
-          </ul>
+              <ul class="right hide-on-med-and-down upper custom-font">
+                <li><a href="{% url 'forum:signup' %}">  {% trans "Signup" %} </a></li>
+                <li><a href="{% url 'forum:login' %}">  {% trans "Login" %} </a></li>
+                <li><a href="{% url 'forum:government_rules' %}">  {% trans "Government rules" %} </a></li>
+				 <li><a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a></li>
+    			<li> <a href=" {% url 'forum:feedback' %} "> {% trans "Give Feedback" %} </a> </li>
+              </ul>
+
+            </div>
 
         </div>
+
       </div>
+      
     </nav>
   </div>
 
@@ -67,64 +68,22 @@
     <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
     <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
     <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
-    <li>
-        <a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a>
-    </li>
+    <li><a href="{% url 'forum:team_page' %}"> {% trans "Team" %} </a></li>
     <li> <a href=" {% url 'forum:feedback' %} "> {% trans "Give Feedback" %} </a> </li>
   </ul>
 
   {% block main %}
 
-  <!-- Section:Slider -->
-  
+    <div class="row"></div>
+    
+    <div class="row">
+      
+    	<div class="col s12 m6 offset-m3 l4 offset-l4">
+        	{% block content %}{% endblock content %}
+      	</div>
 
-      <section class="slider">
-        <div class="slider">
-          <ul class="slides">
-            <li>
-              <img src="{% static 'forum/images/1.webp' %}" alt="">
-              <div class="caption left-align">
-                <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-            </li>
-            <li>
-              <img src="{% static 'forum/images/2.webp' %}" alt="">
-              <div class="caption center-align">
-                <h2 class="light white-text">{% trans "Solutions for farmers by farmers !" %}</h2>
-            </li>
-            <li>
-              <img src="{% static 'forum/images/3.webp' %}" alt="">
-              <div class="caption right-align">
-                <h2 class="light white-text"> {% trans "Solutions for farmers by farmers !" %} </h2>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <!-- Section-signup -->
-
-
-
-      <section class="section section-signup">
-        <div class="container">
-
-          <div class="row">
-            
-            <div class="col s12 m6">
-              {% block content %}{% endblock content %}
-            </div>
-
-            <div class="col s12 m6">
-              <h5> {% trans "Get a free account" %} </h5>
-              <p style="text-align:justify" class="flow-text grey-text text-darken-3">
-                {% trans "Our objective is to keep farmers in tune with the latest developments in relevant technologies, and to harness these emerging opportunities in transforming their lives. Indian farmers rely on each other for guidance on the type of seeds to use, diagnosis of pests and diseases as well as their remedies. In the ideal situation farmers will be able to login to see information that other farmers have inputted." %}
-              </p>
-            </div>
-
-          </div>
-
+    </div>
         
-        </div>
-      </section>
 
   {% endblock main %}
 
@@ -135,13 +94,13 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text"> {% trans "Kisan" %} </h5>
+          <h5 class="white-text custom-font"> {% trans "Kisan" %} </h5>
           <p class="grey-text text-lighten-4">
             {% trans "Our objective is to keep farmers in tune with the latest developments in relevant technologies, and to harness these emerging opportunities in transforming their lives. Indian farmers rely on each other for guidance on the type of seeds to use, diagnosis of pests and diseases as well as their remedies. In the ideal situation farmers will be able to login to see information that other farmers have inputted." %}
           </p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text"> {% trans "Learn more" %} </h5>
+          <h5 class="white-text custom-font"> {% trans "Learn more" %} </h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
             <li><a class="grey-text text-lighten-3" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>

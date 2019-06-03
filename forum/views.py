@@ -178,7 +178,7 @@ def index(request):
         return home(request)
 
     # else show login page
-    return login(request)
+    return HttpResponse("<h1>List view of questions [TODO]</h1>")
 
 
 @login_required

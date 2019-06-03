@@ -16,7 +16,7 @@
 <div class="row container">
 
   
-    <h4 class="row"> Meet our team </h4>
+    <h4 class="row custom-font"> Meet our team </h4>
 
 
     {% for member_data in team_data %}
@@ -29,7 +29,7 @@
               </div>
               <div class="card-content">
                 <div class="row">
-                  <span class="card-title left" style="font-weight:500; margin-left: 10px;">{{member_data.name}}</span>
+                  <span class="card-title custom-font left" style="font-weight:500; margin-left: 10px;">{{member_data.name}}</span>
                   <span class="new badge blue" data-badge-caption="">{{member_data.badge}}</span>
                 </div>
                 <p> {{member_data.description}} </p>

@@ -58,7 +58,7 @@ class SignupForm(MaterialForm, forms.ModelForm):
 
     class Meta:
         model = Farmer
-        exclude = ['date_time_created']
+        fields = ['name', 'phone_number', 'password']
 
         widgets = {
             'phone_number': forms.TextInput(

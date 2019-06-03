@@ -19,57 +19,53 @@
         </div>
 
 
-
     {% else %}
 
-        <div class="card-panel grey lighten-4 grey-text z-depth-0 text-darken-4">
-        <h5 class="row center-align"> {% trans "Signup" %} </h5>
-        <form method="POST" >
+        <form method="post">
+        
+            <div class="card">
 
-            {% csrf_token %}
+                <div class="card-content">
 
-            <div class="input-field">
-                {{form.phone_number.label_tag}}
-                {{form.phone_number}}
-                <span class="helper-text" data-error="{{form.phone_number.errors}}"></span>
+                    <span class="card-title custom-font"> {% trans "Signup" %} </span>
+
+                    <div class="container">
+                        <div class="row"></div>
+                    </div>
+
+                    <p>
+                            {% csrf_token %}
+
+                            <div class="input-field">
+                                {{form.name.label_tag}}
+                                {{form.name}}
+                                <span class="helper-text" data-error="{{form.name.errors}}"></span>
+                            </div>
+
+                            <div class="input-field">
+                                {{form.phone_number.label_tag}}
+                                {{form.phone_number}}
+                                <span class="helper-text" data-error="{{form.phone_number.errors}}"></span>
+                            </div>
+                                
+                            <div class="input-field">
+                                {{form.password.label_tag}}
+                                {{form.password}}
+                                <span class="helper-text" data-error="{{form.password.errors}}"></span>
+                            </div>
+
+                    </p>
+
+                </div>
+
+                <div class="card-action right-align">
+                    <a href="{% url 'forum:login' %}" class="blue-text btn-flat text-darken-3 no-underline waves-effect"> {% trans "Login" %} </a>
+                    <button type="submit" class="btn blue darken-3" > {% trans "Signup" %} </button>
+                </div>
+
             </div>
-
-            <div class="input-field">
-                {{form.first_name.label_tag}}
-                {{form.first_name}}
-                <span class="helper-text" data-error="{{form.first_name.errors}}"></span>
-            </div>
-
-            <div class="input-field">
-                {{form.last_name.label_tag}}
-                {{form.last_name}}
-                <span class="helper-text" data-error="{{form.last_name.errors}}"></span>
-            </div>
-
-            <div class="input-field">
-                {{form.password.label_tag}}
-                {{form.password}}
-                <span class="helper-text" data-error="{{form.password.errors}}"></span>
-            </div>
-
-            <div class="input-field">
-                {{form.dob.label_tag}}
-                {{form.dob}}
-                <span class="helper-text" data-error="{{form.dob.errors}}"></span>
-            </div>
-
-            <div class="input-field">
-                {{form.zip_code.label_tag}}
-                {{form.zip_code}}
-                <span class="helper-text" data-error="{{form.zip_code.errors}}"></span>
-            </div>
-
-            <div class="center-align">
-                <button type="submit" class="btn blue darken-3"> {% trans "Signup" %} </button>
-            </div>
-
+        
         </form>
-    </div>
 
     {% endif %}
 

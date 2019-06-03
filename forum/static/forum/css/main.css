@@ -1,4 +1,12 @@
-  /* question view styles css */
+.upper{
+  text-transform: uppercase
+}
+
+.custom-font, .btn, .btn-flat, .btn-small {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* question view styles css */
 
 a:hover:not(.no-underline)
 {
@@ -11,6 +19,7 @@ a:hover:not(.no-underline)
 {
   margin-bottom:0!important;
 }
+
 .material-icons.md-18 { font-size: 18px; }
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
@@ -114,7 +123,6 @@ input:focus, textarea:focus{
 {
   width:100%!important;
 }
-
 
 
 .iconss {
