@@ -1,3 +1,59 @@
+
+#kisan-header-logo {
+
+  /* For small screens when the navbar collapses into menu icon */
+
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  position: relative;
+  top: 15px;
+  float: right;
+ 
+}
+
+footer ul li {
+  font-size: 0.8em;
+}
+
+@media only screen and (min-width: 993px) {
+
+  #kisan-header-logo {
+
+  /* For small screens when the navbar is exapanded */
+
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+    top: 17px;
+    float: left;
+
+  }
+
+}
+
+#kisan-footer-logo {
+
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  position: relative;
+  float: left;
+
+}
+
+#logo-caption {
+  margin-left:40px;
+  font-size: 0.8em;
+
+  /* So that text doesn't comes directly below the logo */
+
+}
+
+
 .upper{
   text-transform: uppercase
 }

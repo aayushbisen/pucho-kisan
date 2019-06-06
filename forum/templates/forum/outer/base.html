@@ -40,6 +40,8 @@
       <div class="row">
         <div class="col s12">
             <div class="nav-wrapper">
+
+              <img src="{% static 'forum/images/icons/icon-144x144.png' %}" class="z-depth-1" alt="Kisan" id="kisan-header-logo" />
    
               <a href="{% url 'forum:index' %}" class="brand-logo logo-custom no-underline">
                 <b class="custom-font" > {% trans "Kisan" %} </b>
@@ -90,24 +92,47 @@
 
 
   {% comment %} Footer {% endcomment %}
-  <footer class="page-footer blue darken-3">
+  <footer class="page-footer blue darken-3 z-depth-1">
+
     <div class="container">
+
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text custom-font"> {% trans "Kisan" %} </h5>
-          <p class="grey-text text-lighten-4">
-            {% trans "Our objective is to keep farmers in tune with the latest developments in relevant technologies, and to harness these emerging opportunities in transforming their lives. Indian farmers rely on each other for guidance on the type of seeds to use, diagnosis of pests and diseases as well as their remedies. In the ideal situation farmers will be able to login to see information that other farmers have inputted." %}
-          </p>
+        
+        <div class="col l4 s12">
+          <div class="kisan-footer-logo-container">
+            <img src="{% static 'forum/images/icons/icon-144x144.png' %}" alt="Kisan" class="z-depth-1" id="kisan-footer-logo" />
+            <h5 class="white-text custom-font"> {% trans "Kisan" %} </h5>
+          </div>
+          <p class="custom-font" id="logo-caption" > {% trans "Solution for farmers by farmers" %}  </p>
         </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text custom-font"> {% trans "Learn more" %} </h5>
+
+        <div class="col l4 s12">
+  
+          <h6 class="grey-text text-lighten-2 custom-font"> {% trans "Browse" %} </h6>
+
           <ul>
-            <li><a class="grey-text text-lighten-3" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
+            <li><a class="white-text" href="{% url 'forum:index' %}"> {% trans "Questions" %} </a></li>
+            <li><a class="white-text" href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
+            <li><a class="white-text" href="#TODO"> {% trans "About" %} </a></li>
           </ul>
+      
         </div>
+
+        <div class="col l4 s12">
+      
+          <h6 class="grey-text text-lighten-2 custom-font"> {% trans "Learn more" %} </h6>
+      
+          <ul>
+            <li><a class="white-text" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
+            <li><a class="white-text" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
+          </ul>
+      
+        </div>
+      
       </div>
+
     </div>
+
     <div class="footer-copyright">
       <div class="container">
         © 2019 {% trans "Kisan" %}

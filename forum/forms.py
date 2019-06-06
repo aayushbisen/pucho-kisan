@@ -58,25 +58,35 @@ class SignupForm(MaterialForm, forms.ModelForm):
 
     class Meta:
         model = Farmer
-        fields = ['name', 'phone_number', 'password']
+        fields = ['name', 'phone_number', 'password', 'zip_code']
 
         widgets = {
+            'name': forms.TextInput(
+                attrs={
+                    'placeholder': 'पी. कुमार'
+                }
+            ),
             'phone_number': forms.TextInput(
                 attrs={
                     'autofocus': False,
-                    'type': 'tel'
+                    'type': 'tel',
+                    'placeholder': '794 **** 902',
+                }
+            ),
+            'zip_code': forms.TextInput(
+                attrs={
+                    'autofocus': False,
+                    'type': 'number',
+                    'placeholder': '491001',
                 }
             ),
             'password': forms.PasswordInput(
                 attrs={
-                    'type': 'password'
+                    'type': 'password',
+                    'placeholder': '',
                 }
             ),
-            'dob': forms.TextInput(
-                attrs={
-                    'placeholder': 'YYYY-MM-DD'
-                }
-            )
+            
         }
 
 

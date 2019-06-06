@@ -8,16 +8,21 @@
 
     {% if is_message_send %}
 
-        <div style="height:80vh;" class="valign-wrapper hide-on-med-and-down flow-text">
-            <div class="card-panel blue white-text">
-             {% trans "An verification link is send to your registered mobile number. Click the link to activate your account" %}
+        <div class="card">
+            <div class="card-content">
+            <span class="card-title"> {% trans "Account created" %} </span>
+
+                <p>
+                    {% trans "An verification link is send to your registered mobile number. Click the link to activate your account" %}
+                </p>
+
+            </div>
+            <div class="card-action custom-text right-align">
+            <a href="{% url 'forum:index' %}" class="btn-flat blue-text text-darken-3 no-underline waves-effect"> {% trans "Home" %} </a>
+
+            <a href="{% url 'forum:login' %}" class="btn blue darken-3 no-underline waves-effect"> {% trans "Login" %} </a>
             </div>
         </div>
-
-        <div class="card-panel blue white-text hide-on-large-only flow-text">
-             {% trans "An verification link is send to your registered mobile number. Click the link to activate your account" %}
-        </div>
-
 
     {% else %}
 
@@ -47,7 +52,13 @@
                                 {{form.phone_number}}
                                 <span class="helper-text" data-error="{{form.phone_number.errors}}"></span>
                             </div>
-                                
+                            
+                            <div class="input-field">
+                                {{form.zip_code.label_tag}}
+                                {{form.zip_code}}
+                                <span class="helper-text" data-error="{{form.zip_code.errors}}"></span>
+                            </div>
+
                             <div class="input-field">
                                 {{form.password.label_tag}}
                                 {{form.password}}

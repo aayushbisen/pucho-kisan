@@ -33,14 +33,14 @@ class Farmer(models.Model):
     password = models.CharField(_("Farmer's password"), max_length=100)
     phone_number = models.CharField(_("Phone number"), max_length=20, unique=True)
     zip_code = models.IntegerField(_("Zip code"),
-                                   validators=[validate_zip_code], blank=True)
+                                   validators=[validate_zip_code], blank=True, null=True)
 
     date_time_created = models.DateTimeField(auto_now_add=True)
     account_token = models.CharField(max_length=20, default=str(uuid.uuid4())[:20], blank=True)
     is_active = models.BooleanField(default=True)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return self.name
 
     def get_absolute_url(self):
         return reverse("forum:farmer_detail", kwargs={"pk": self.pk})
