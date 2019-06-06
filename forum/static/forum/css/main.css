@@ -13,6 +13,10 @@
  
 }
 
+.text-logo {
+  letter-spacing: 1px;
+}
+
 footer ul li {
   font-size: 0.8em;
 }
@@ -25,7 +29,7 @@ footer ul li {
 
     width: 30px;
     height: 30px;
-    margin-right: 10px;
+    max-resolution: righ;t: 10px;
     position: relative;
     top: 17px;
     float: left;
