@@ -171,13 +171,10 @@ def goverment_rules(request):
 
 def index(request):
 
-    # Show home if loggined
-
-    if is_loggined(request):
-        return home(request)
-
-    # else show login page
-    return HttpResponse("<h1>List view of questions [TODO]</h1>")
+    return render(request, "forum/inner/index.html", {
+        'questions': Question.objects.all(),
+        **language_details(request),
+    })
 
 
 @login_required

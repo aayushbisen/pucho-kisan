@@ -192,3 +192,14 @@ input:focus, textarea:focus{
 a.gh:hover {
   color: #24292e !important;
 }
+
+
+.question-item .title{
+
+  font-size: 1em!important;
+
+}
+
+.question-item .secondary {
+  font-size: 0.8em;
+}

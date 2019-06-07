@@ -47,7 +47,7 @@
 
               <h5 class="grey-text text-darken-3" >Questions asked </h5>
               {% for question in questions %}
-                {{ question.markup }}
+                {{ question.card_view }}
               {% empty %}
                 <div class="row flow-text grey-text">No questions </div>
               {% endfor %}

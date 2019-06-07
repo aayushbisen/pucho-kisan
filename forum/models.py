@@ -151,11 +151,17 @@ class Question(models.Model):
             'pk': self.pk
         })
 
-    def markup(self, farmer):
+    def list_view(self):
+        
+        return render_to_string("forum//inner/question_list.html", {
+            'question': self,
+        })
+
+    def card_view(self, farmer):
 
         is_upvoted = farmer in self.upvoted_by.all()
 
-        return render_to_string("forum/inner/question.html", {
+        return render_to_string("forum/inner/question_card.html", {
             'question': self,
             'is_upvoted': is_upvoted
 

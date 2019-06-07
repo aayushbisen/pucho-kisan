@@ -1,0 +1,27 @@
+<li class="collection-item question-item">
+
+    {% comment %} <i class="material-icons circle green"> bug_report </i> {% endcomment %}
+
+    <a href="{{question.get_absolute_url}}" class="title black-text"> 
+    
+      {{question.question|slice:":40"}}  
+
+      {% if question.question|length  > 40 %} ... ?  {% endif %}
+
+    </a>
+    
+    <p class="right-align">
+
+      {% if question.upvotes %}
+          <span class="badge right secondary"> {{question.upvotes}} upvote{{ question.upvotes|pluralize }} </span> 
+      {% endif %}
+
+      {% if question.answers %}
+          <span class="badge right secondary"> {{question.answers|length}} answer{{ question.answers|pluralize }} </span> 
+      {% endif %}
+
+        <span class="badge right secondary"> {{question.asked_by}} </span> 
+
+    </p>
+
+</li>

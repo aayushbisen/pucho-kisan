@@ -1,3 +1,53 @@
-<h1>
-    Hello World !!!
-</h1>
+{% extends 'forum/outer/base.html' %}
+{% load i18n %}
+
+{% block title %} {% trans "Kisan" %} {% endblock title %}
+
+
+{% block content %}
+
+
+<div class="row">
+
+
+    <div class="col s12">
+
+        <div class="left-align">
+            <h5 class="custom-font" >Top questions</h5>
+        </div>
+
+        <div class="right-align">
+            <a class='dropdown-trigger' href='#' data-target='question-filter'>
+                <span> Pest </span>
+                <i class="material-icons right">arrow_drop_down</i>
+            </a>
+
+            <ul id='question-filter' class='dropdown-content'>
+                <li><a href="#pest-questions">one</a></li>
+                <li><a href="#seed-questions">two</a></li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="row"></div>
+    </div>
+
+    <ul class="collection">
+
+        {% for question in questions %}
+
+            {{question.list_view}}
+
+        {% endfor %}
+
+    
+    </ul>
+
+
+</div>
+
+
+{% endblock content %}
