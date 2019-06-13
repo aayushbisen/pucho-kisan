@@ -39,7 +39,7 @@ INSTALLED_APPS = [
 
     # Added apps
 
-    'forum',
+    'forum.apps.ForumConfig',
     'pwa',
 ]
 
