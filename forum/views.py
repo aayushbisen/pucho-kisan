@@ -545,7 +545,7 @@ def team_page(request):
             'name': "Suvansh Rana",
             'badge': "full stack dev",
             'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
-            'github_link': "https://github.com/sherlock2000",
+            'github_link': "https://github.com/suvansh-rana",
             'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
             'description': "Suvansh is a computer science undergrad and music lover, interested in working with projects which help people at a larger scale. ",
         },
