@@ -59,7 +59,7 @@ class Farmer(models.Model):
     def send_verification_link(self):
 
         TEMPLATE_ID = 8203
-        API_KEY = "47ftJlFUczY3eVTSbupGm1yjMxH6QDgAWhXs5EKvOadoqkwLRBfDU8plrv70ncJFqKTIwXNb3QZYCt92"
+        API_KEY = "EoQ3VySgpcOk7Iyvt7dcwGW77m6DWoPdvE2B7mkeVtgCwrUlvSecBry8VxOk"
 
         url = "https://www.fast2sms.com/dev/bulk"
 
