@@ -2,7 +2,7 @@
     <img src="forum/static/forum/images/icons/icon-144x144.png" >
 </p>
 
-# pucho-kisan
+# Pucho Kisaan
 
 A forum for farmers where then can ask questions about the problems they face in farming.
 
