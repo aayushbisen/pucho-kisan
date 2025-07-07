@@ -21,16 +21,6 @@ A forum for farmers where then can ask questions about the problems they face in
 <br/>
 
 <p align="center">
-    <img src="preview/2.png" width="300px">
-</p>
-
-<br/>
-
----
-
-<br/>
-
-<p align="center">
     <img src="preview/3.png" width="300px">
 </p>
 
