@@ -37,8 +37,8 @@ urlpatterns = [
     # specialists/
     path("specialists/", views.specialists, name="specialists"),
 
-    # edit/
-    path("edit/", views.FarmerUpdateView.as_view(), name="edit_farmer"),
+    # # edit/
+    # path("edit/", views.FarmerUpdateView.as_view(), name="edit_farmer"),
 
     # search?q=<search_term>
     path("search", views.search, name="search"),
