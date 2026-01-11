@@ -4,7 +4,7 @@ import requests
 from urllib.parse import urlencode
 
 from django.db import models
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.shortcuts import reverse
 from django.template.loader import render_to_string
 from .validators import (
@@ -14,6 +14,7 @@ from .validators import (
     validate_zip_code
 )
 from .file_paths import question_file_path
+from decouple import config
 
 # Create your models here.
 
@@ -59,7 +60,7 @@ class Farmer(models.Model):
     def send_verification_link(self):
 
         TEMPLATE_ID = 8203
-        API_KEY = "EoQ3VySgpcOk7Iyvt7dcwGW77m6DWoPdvE2B7mkeVtgCwrUlvSecBry8VxOk"
+        API_KEY = config("FAST2SMS_API_KEY")
 
         url = "https://www.fast2sms.com/dev/bulk"
 

@@ -1,7 +1,7 @@
 from django import forms
 from django.forms.utils import ErrorList
 from .models import Farmer, Question, Answer
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 class PlainErrorList(ErrorList):
@@ -104,7 +104,6 @@ class CreateQuestionForm(MaterialForm, forms.ModelForm):
     file_field = forms.FileField(required=False,
                                  widget=forms.FileInput(
                                      attrs={
-                                         'multiple': True,
                                          'accept': 'image/*, video/*'
                                      }
                                  ))

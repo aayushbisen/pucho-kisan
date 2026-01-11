@@ -13,7 +13,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
 
     # /signup/
-    path('signup/', views.signup, name='signup'),
+    # path('signup/', views.signup, name='signup'),
 
     # /home/
     path('home', views.home, name='home'),
@@ -32,7 +32,7 @@ urlpatterns = [
     path("logout/", views.logout, name="logout"),
 
     # create-question/
-    path("create-question/", views.create_question, name="create_question"),
+    # path("create-question/", views.create_question, name="create_question"),
 
     # specialists/
     path("specialists/", views.specialists, name="specialists"),

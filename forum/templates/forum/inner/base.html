@@ -93,9 +93,6 @@
             <a href="{% url 'forum:home' %}"> <i class="material-icons left">home</i> {% trans "Home" %} </a>
           </li>
 
-          <li><a href="{% url 'forum:create_question' %}"> <i class="material-icons left">chat</i> {% trans "Ask" %}
-            </a></li>
-
           <li><a href="{% url 'forum:specialists' %}"> <i class="material-icons left">supervisor_account</i>
               {% trans "Specialist" %} </a></li>
           <li><a href="{% url 'forum:search' %}"> <i class="material-icons left">search</i> {% trans "Search" %} </a>
@@ -109,8 +106,6 @@
           <li>
             <a href="{% url 'forum:home' %}"> <i class="material-icons">home</i> {% trans "Home" %} </a>
           </li>
-          <li><a href="{% url 'forum:create_question' %}"> <i class="material-icons">chat</i> {% trans "Ask question" %}
-            </a></li>
           <li><a href="{% url 'forum:specialists' %}"> <i class="material-icons">supervisor_account</i>
               {% trans "Specialists" %} </a></li>
           <li><a href="{% url 'forum:search' %}"> <i class="material-icons left">search</i> {% trans "Search" %} </a>
@@ -199,11 +194,6 @@
 
   <footer>
 
-    <div class="fixed-action-btn hide-on-large-only">
-      <a href="{% url 'forum:create_question' %}" class="btn-floating btn-large blue green">
-        <i class="large material-icons">message</i>
-      </a>
-    </div>
     {% block JS %}
 
     <script type="text/javascript">
