@@ -1,5 +1,7 @@
 {% extends 'forum/inner/base.html' %} 
 
+{% load static %}
+
 {% load i18n %}
 
 {% block title %}  {% trans "Specialists" %}  {% endblock title %} 
@@ -12,9 +14,9 @@
 <div class="container">
 
 
-  <blockquote class="flow-text" style="border-left-color: #1976d2;">
+  <!-- <blockquote class="flow-text" style="border-left-color: #1976d2;">
     {% trans "Want to help farmers? Join our panel of specialists. Contact us" %} <a href="mailto:puchokisan@gmail.com"> {% trans "here" %} </a>
-  </blockquote>
+  </blockquote> -->
 
 
 <ul class="collection">
@@ -22,11 +24,13 @@
   {% for specialist in specialists %}
 
     <li class="collection-item avatar">
-      <img
-        src="https://image.flaticon.com/icons/svg/190/190683.svg"
-        alt="{{specialist}}"
-        class="circle"
-      />
+      <a target="_blank" rel="nopener noreferrer" href="https://www.flaticon.com/free-icons/expert" title="expert icons" alt="Expert icons created by wanicon - Flaticon">
+        <img
+          src="{% static 'forum/images/expert.png' %}"
+          alt="{{specialist}}"
+          class="circle"
+        />
+      </a>
       <span class="title"> {{specialist}} </span>
     
     <p>
@@ -35,7 +39,7 @@
       <span class="new badge blue" data-badge-caption="{{specialist.subject}}"></span>
     </p>
     
-    <a href="tel:{{specialist.phone_number}}" class="secondary-content">
+    <a class="secondary-content">
       <i class="material-icons blue-text">phone</i>
     </a>
 

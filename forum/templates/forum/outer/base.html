@@ -47,7 +47,6 @@
           
 
           <ul class="right hide-on-med-and-down">
-            <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
             <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
             <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
             <li>
@@ -64,7 +63,6 @@
   </div>
 
   <ul class="sidenav" id="farmer-options">
-    <li><a href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
     <li><a href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
     <li><a href="{% url 'forum:government_rules' %}"> {% trans "Government rules" %} </a></li>
     <li>
@@ -144,14 +142,13 @@
           <h5 class="white-text"> {% trans "Learn more" %} </h5>
           <ul>
             <li><a class="grey-text text-lighten-3" href="{% url 'forum:login' %}"> {% trans "Login" %} </a></li>
-            <li><a class="grey-text text-lighten-3" href="{% url 'forum:signup' %}"> {% trans "Signup" %} </a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-        © 2019 {% trans "Kisan" %}
+        © {% now "Y" %} {% trans "Kisan" %}
         <a class="right btn white blue-text" href="{{url_for_language_change}}"> {{another_language}}  </a>
       </div>
     </div>

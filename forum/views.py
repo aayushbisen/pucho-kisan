@@ -5,7 +5,7 @@ from django.shortcuts import (
 
 from . import forms as custom_forms
 from .models import Farmer, Question, Answer, Specialist, QuestionFile
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.core.exceptions import ValidationError
 from django.utils.translation import get_language
 
@@ -110,13 +110,13 @@ def login(request, verify_message=""):
 
                 if check_password(password, farmer.password):
 
-                    if not farmer.is_active:
-                        login_form.add_error('phone_number', _(
-                            "Account is not activated"))
+                    # if not farmer.is_active:
+                    #     login_form.add_error('phone_number', _(
+                    #         "Account is not activated"))
 
-                    else:
-                        request.session['farmer_id'] = farmer.id
-                        return redirect("forum:home")
+                    # else:
+                    request.session['farmer_id'] = farmer.id
+                    return redirect("forum:home")
 
                 if farmer.is_active:
                     login_form.add_error('password', _("Invalid password"))
@@ -132,35 +132,35 @@ def login(request, verify_message=""):
     })
 
 
-def signup(request):
+# def signup(request):
 
-    signup_form = custom_forms.SignupForm()
+#     signup_form = custom_forms.SignupForm()
 
-    is_message_send = False
+#     is_message_send = False
 
-    if request.method == "POST":
+#     if request.method == "POST":
 
-        signup_form = custom_forms.SignupForm(request.POST)
+#         signup_form = custom_forms.SignupForm(request.POST)
 
-        if signup_form.is_valid():
+#         if signup_form.is_valid():
 
-            new_farmer = signup_form.save()
+#             new_farmer = signup_form.save()
 
-            password = make_password(signup_form.cleaned_data['password'])
-            new_farmer.password = password
+#             password = make_password(signup_form.cleaned_data['password'])
+#             new_farmer.password = password
 
-            new_farmer.save()
+#             new_farmer.save()
 
-            # verification message send
-            new_farmer.send_verification_link()
-            is_message_send = True
+#             # verification message send
+#             new_farmer.send_verification_link()
+#             is_message_send = True
 
-    return render(request, "forum/outer/signup.html", {
-        'form': signup_form,
-        'is_message_send': is_message_send,
-        **language_details(request),
+#     return render(request, "forum/outer/signup.html", {
+#         'form': signup_form,
+#         'is_message_send': is_message_send,
+#         **language_details(request),
 
-    })
+#     })
 
 
 def goverment_rules(request):
@@ -248,58 +248,58 @@ def home(request):
     })
 
 
-def create_question(request):
+# def create_question(request):
 
-    FILE_LIMIT = 10
-    error_occured = False
+#     FILE_LIMIT = 10
+#     error_occured = False
 
-    create_form = custom_forms.CreateQuestionForm()
+#     create_form = custom_forms.CreateQuestionForm()
 
-    if request.method == "POST":
+#     if request.method == "POST":
 
-        create_form = custom_forms.CreateQuestionForm(request.POST)
-        files = request.FILES.getlist('file_field')
+#         create_form = custom_forms.CreateQuestionForm(request.POST)
+#         files = request.FILES.getlist('file_field')
 
-        if create_form.is_valid():
+#         if create_form.is_valid():
 
-            question = create_form.save(commit=False)
-            question.asked_by = loggined_farmer(request)
-            question.save()
+#             question = create_form.save(commit=False)
+#             question.asked_by = loggined_farmer(request)
+#             question.save()
 
-            if len(files) > FILE_LIMIT:
-                create_form.add_error('file_field', _(
-                    "Upto 10 files can be attached with a question"))
-                error_occured = True
+#             if len(files) > FILE_LIMIT:
+#                 create_form.add_error('file_field', _(
+#                     "Upto 10 files can be attached with a question"))
+#                 error_occured = True
 
-            for f in files:
+#             for f in files:
 
-                try:
-                    validate_file_extension(f)
-                    validate_file_size(f)
+#                 try:
+#                     validate_file_extension(f)
+#                     validate_file_size(f)
 
-                    question_file = QuestionFile.objects.create()
-                    question_file.save()
+#                     question_file = QuestionFile.objects.create()
+#                     question_file.save()
 
-                    question_file.question_file = f
-                    question_file.save()
+#                     question_file.question_file = f
+#                     question_file.save()
 
-                    question.files.add(question_file)
-                    question.save()
+#                     question.files.add(question_file)
+#                     question.save()
 
-                except ValidationError as e:
-                    create_form.add_error('file_field', e)
-                    error_occured = True
+#                 except ValidationError as e:
+#                     create_form.add_error('file_field', e)
+#                     error_occured = True
 
-            if error_occured:
-                question.delete()
+#             if error_occured:
+#                 question.delete()
 
-            else:
-                return HttpResponseRedirect(question.get_absolute_url())
+#             else:
+#                 return HttpResponseRedirect(question.get_absolute_url())
 
-    return render(request, "forum/inner/question_create.html", {
-        **basic_inner_context(request),
-        'form': create_form
-    })
+#     return render(request, "forum/inner/question_create.html", {
+#         **basic_inner_context(request),
+#         'form': create_form
+#     })
 
 
 class QuestionUpdateView(generic.UpdateView):
@@ -545,9 +545,9 @@ def team_page(request):
             'name': "Suvansh Rana",
             'badge': "full stack dev",
             'avatar_link': "https://avatars0.githubusercontent.com/u/36293610",
-            'github_link': "https://github.com/suvansh-rana",
-            'linked_in_link': "https://www.linkedin.com/in/suvansh-rana-726444150/",
-            'description': "Suvansh is a computer science undergrad and music lover, interested in working with projects which help people at a larger scale. ",
+            'github_link': "https://github.com/suvnshr",
+            'linked_in_link': "https://www.linkedin.com/in/suvnshr",
+            'description': "Suvansh Rana is a Full-stack software engineer with 4.5+ years of experience working with the MERN stack, focused on clean code, performance, and real-world products.",
         },
     ] 
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 import django_heroku
 import os
+from decouple import config
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -19,12 +20,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'x$!4+3*j7&h__@p398&)8=(nlk3t&4jz6#14&b8@l@^do(02!('
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+production = config("PROD") == "True"
+DEBUG = not production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS_FROM_ENV = config("ALLOWED_HOSTS")
+PROD_ALLOWED_HOSTS = ALLOWED_HOSTS_FROM_ENV.split(
+    ",") if ALLOWED_HOSTS_FROM_ENV else []
+ALLOWED_HOSTS = PROD_ALLOWED_HOSTS if production else []
 
 
 # Application definition
@@ -126,8 +131,6 @@ TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
-USE_L10N = True
-
 USE_TZ = True
 
 LOCALE_PATHS = [
@@ -139,7 +142,14 @@ LOCALE_PATHS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": 'whitenoise.storage.CompressedManifestStaticFilesStorage',
+    },
+}
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
@@ -149,10 +159,68 @@ STATICFILES_DIRS = [
 
 ]
 
+# PWA Configuration
+PWA_APP_NAME = 'Pucho Kisan'
+PWA_APP_DESCRIPTION = "Farming questions and answers platform"
+PWA_APP_THEME_COLOR = '#1565C0'  # Change to your brand color
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+
+PWA_APP_ICONS = [
+    {
+        'src': '/static/forum/images/icons/icon-72x72.png',
+        'sizes': '72x72'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-96x96.png',
+        'sizes': '96x96'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-128x128.png',
+        'sizes': '128x128'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-144x144.png',
+        'sizes': '144x144'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-152x152.png',
+        'sizes': '152x152'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-192x192.png',
+        'sizes': '192x192'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-384x384.png',
+        'sizes': '384x384'
+    },
+    {
+        'src': '/static/forum/images/icons/icon-512x512.png',
+        'sizes': '512x512'
+    }
+]
+
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/forum/images/icons/icon-152x152.png',
+        'sizes': '152x152'
+    }
+]
+
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+
+# Point to your existing service worker
 PWA_SERVICE_WORKER_PATH = os.path.join(
     BASE_DIR,
     'forum/static/forum/js',
-    'serviceworker.js')
+    'serviceworker.js'
+)
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
