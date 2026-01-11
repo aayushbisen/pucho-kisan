@@ -110,7 +110,6 @@
               {% trans "Specialists" %} </a></li>
           <li><a href="{% url 'forum:search' %}"> <i class="material-icons left">search</i> {% trans "Search" %} </a>
           </li>
-          <li><a href="{% url 'forum:edit_farmer' %}"> <i class="material-icons">edit</i> {% trans "Edit" %} </a></li>
           <li><a href="{{farmer.get_absolute_url}}"> <i class="material-icons">person</i> {% trans "Profile" %} </a>
           </li>
           <li><a href="{% url 'forum:logout' %}"> <i class="material-icons">exit_to_app</i> {% trans "Logout" %} </a>

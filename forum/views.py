@@ -355,25 +355,25 @@ class FarmerDetailView(generic.DetailView):
         return context
 
 
-class FarmerUpdateView(generic.UpdateView):
+# class FarmerUpdateView(generic.UpdateView):
 
-    template_name = "forum/inner/farmer_edit.html"
-    form_class = custom_forms.FarmerEditForm
+#     template_name = "forum/inner/farmer_edit.html"
+#     form_class = custom_forms.FarmerEditForm
 
-    def get_object(self):
-        return loggined_farmer(self.request)
+#     def get_object(self):
+#         return loggined_farmer(self.request)
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
 
-        farmer = loggined_farmer(self.request)
+#         farmer = loggined_farmer(self.request)
 
-        context = {
-            **context,
-            **basic_inner_context(self.request),
-        }
+#         context = {
+#             **context,
+#             **basic_inner_context(self.request),
+#         }
 
-        return context
+#         return context
 
 
 def question_detail_view(request, pk):
