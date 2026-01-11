@@ -6,7 +6,7 @@
 
 A forum for farmers where they can ask questions about the problems they face in farming.
 
-[Visit Pucho Kisan :arrow_upper_right:](https://pucho-kisan.herokuapp.com/)
+[Visit Pucho Kisan :arrow_upper_right:](https://pucho-kisan.onrender.com)
 
 ## Preview
 
